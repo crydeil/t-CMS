@@ -58,7 +58,8 @@ if (isset($_SESSION['user_id']))
     else
     {
         die ('Прости,' . $admin->getLogin() . ', но у тебя нет должных полномочий для входа в админку.<br />
-            <a href="' . BASE_URL . '">Вернуться на главную</a> или <a href="' . BASE_URL . '/auth/login/logout">войти</a> под другим логином.');
+            <a href="' . BASE_URL . '">Вернуться на главную</a> или 
+            <a href="' . BASE_URL . '/auth/login/logout">войти</a> под другим логином.');
     }
 }
 else

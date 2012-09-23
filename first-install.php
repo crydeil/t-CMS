@@ -39,21 +39,21 @@ function GenerateSalt($n=3)
 if (empty($_POST))
 {
     echo '<form action="" method="post">
-                <div class="input-prepend">
-                    <span class="add-on"><i class="icon-user"></i></span>
-                    <input type="text" class="input-xlarge" placeholder="Логин администратора" name="login" />
-                </div>
-                <div class="input-prepend">
-                    <span class="add-on"><i class="icon-key"></i></span>
-                    <input type="password" class="input-xlarge" placeholder="Пароль администратора" name="password" />
-                </div>
-                <div class="input-prepend">
-                    <span class="add-on"><i class="icon-key"></i></span>
-                    <input type="password" class="input-xlarge" placeholder="Пароль ещё раз" name="password_confirm" /></p>
-                </div>
-                Будьте внимательны!<br /> Пароль админа восстановить невозможно.</p>
-                <p><input type="submit" class="btn btn-primary" value="Установить t-CMS" /></p>
-            </form>';
+            <div class="input-prepend">
+                <span class="add-on"><i class="icon-user"></i></span>
+                <input type="text" class="input-xlarge" placeholder="Логин администратора" name="login" />
+            </div>
+            <div class="input-prepend">
+                <span class="add-on"><i class="icon-key"></i></span>
+                <input type="password" class="input-xlarge" placeholder="Пароль администратора" name="password" />
+            </div>
+            <div class="input-prepend">
+                <span class="add-on"><i class="icon-key"></i></span>
+                <input type="password" class="input-xlarge" placeholder="Пароль ещё раз" name="password_confirm" />
+            </div>
+            <p>Будьте внимательны!<br /> Пароль админа восстановить невозможно.</p>
+            <p><input type="submit" class="btn btn-primary" value="Установить t-CMS" /></p>
+        </form>';
 
 }
 else
@@ -101,13 +101,15 @@ else
                                                     `password`='{$hashed_password}',
                                                     `salt`='{$salt}'");
 
-        echo '<h4>Поздравляем, Вы успешно зарегистрированы!</h4><a href="' . BASE_URL . '/auth/login">Авторизоваться</a>';
+        echo '<h4>Поздравляем, Вы успешно зарегистрированы!</h4>
+            <p><a href="' . BASE_URL . '/auth/login">Авторизоваться</a></p>';
 
     }
     else
     {
 
-        echo '<h4>Возникли следующие ошибки</h4>' . $errort . '<p></p><p>Вернуться назад и <a href="' . BASE_URL . '/first-install.php">попробовать ещё раз</a>.</p>';
+        echo '<h4>Возникли следующие ошибки</h4>' . $errort . '<p></p>
+            <p>Вернуться назад и <a href="' . BASE_URL . '/first-install.php">попробовать ещё раз</a>.</p>';
 
     }
 }
@@ -116,7 +118,8 @@ echo '</div>
 
         <div class="span7">
             <h3>Инструкции</h3>
-            <p>Для успешной инсталляции <strong>t-CMS</strong> - заполни файл <em>./ t-admin/config.php</em> (в корне) в соответствии с твоим хостингом.</p>
+            <p>Для успешной инсталляции <strong>t-CMS</strong> - заполни файл <em>./ t-admin/config.php</em> (в корне) 
+            в соответствии с твоим хостингом.</p>
             <p>Если ты уже установил <strong>t-CMS</strong>, то:</p> 
             <p>
             <ol>

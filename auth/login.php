@@ -107,12 +107,12 @@ echo '<div class="container">
 
             <div class="input-prepend">
                 <span class="add-on"><i class="icon-user"></i></span>
-                <input type="text" class="input-xlarge" name="login" placeholder="Ваш логин" />
+                <input type="text" class="input-xlarge" name="login" placeholder="Логин администратора" />
             </div>
             <p></p>
             <div class="input-prepend">
                 <span class="add-on"><i class="icon-key"></i></span>
-                <input type="password" class="input-xlarge" name="password" placeholder="Ваш пароль" />
+                <input type="password" class="input-xlarge" name="password" placeholder="Пароль администратора" />
             </div>
             <p></p>
             <p><label class="checkbox inline">

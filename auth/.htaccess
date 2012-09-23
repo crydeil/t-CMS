@@ -3,7 +3,7 @@ AddDefaultCharset utf-8
 DirectoryIndex index.php
 
 RewriteEngine on
-RewriteBase /test/auth/
+RewriteBase /auth/
 
 Options +FollowSymlinks
 Options All -Indexes
