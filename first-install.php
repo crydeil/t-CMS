@@ -22,7 +22,7 @@ echo '<div class="container">
             </div>            
             
             <div class="span5">
-                <h2>Введите свои данные</h2>';
+                <h2>Данные для установки</h2>';
 
 function GenerateSalt($n=3)
 {
@@ -43,6 +43,7 @@ if (empty($_POST))
                 <span class="add-on"><i class="icon-user"></i></span>
                 <input type="text" class="input-xlarge" placeholder="Логин администратора" name="login" />
             </div>
+            <p></p>
             <div class="input-prepend">
                 <span class="add-on"><i class="icon-key"></i></span>
                 <input type="password" class="input-xlarge" placeholder="Пароль администратора" name="password" />
@@ -51,7 +52,12 @@ if (empty($_POST))
                 <span class="add-on"><i class="icon-key"></i></span>
                 <input type="password" class="input-xlarge" placeholder="Пароль ещё раз" name="password_confirm" />
             </div>
-            <p>Будьте внимательны!<br /> Пароль админа восстановить невозможно.</p>
+            <p>&nbsp;</p>
+            <div class="input-prepend">
+                <span class="add-on"><i class="icon-globe"></i></span>
+                <input type="text" class="input-xlarge" placeholder="Название сайта" name="title" />
+            </div>
+            <p>&nbsp;</p>            
             <p><input type="submit" class="btn btn-primary" value="Установить t-CMS" /></p>
         </form>';
 
@@ -62,6 +68,7 @@ else
     $login = (isset($_POST['login'])) ? $db->real_escape_string($_POST['login']) : '';
     $password = (isset($_POST['password'])) ? $db->real_escape_string($_POST['password']) : '';
     $password_confirm = (isset($_POST['password_confirm'])) ? $db->real_escape_string($_POST['password_confirm']) : '';
+    $title = (isset($_POST['title'])) ? $db->real_escape_string($_POST['title']) : '';
 
     $error = false;
     $errort = '';
@@ -75,6 +82,11 @@ else
     {
             $error = true;
             $errort .= '- Длина пароля должна быть не менее 6-ти символов.<br />';
+    }
+    if (strlen($title) < 5)
+    {
+            $error = true;
+            $errort .= '- Длина названия сайта должна быть не менее 5-ти символов.<br />';
     }
     if ($password !== $password_confirm)
     {
@@ -96,10 +108,12 @@ else
         $salt = GenerateSalt();
         $hashed_password = md5(md5($password) . $salt);
 
-        $query = $db->query("INSERT INTO `t-users` SET
+        $query1 = $db->query("INSERT INTO `t-users` SET
                                                     `login`='{$login}',
                                                     `password`='{$hashed_password}',
                                                     `salt`='{$salt}'");
+                        
+        $query2 = $db->query("UPDATE `t-settings` WHERE `id`='1' SET `title`='{$title}'");
 
         echo '<h4>Поздравляем, Вы успешно зарегистрированы!</h4>
             <p><a href="' . BASE_URL . '/auth/login">Авторизоваться</a></p>';
@@ -118,7 +132,7 @@ echo '</div>
 
         <div class="span7">
             <h3>Инструкции</h3>
-            <p>Для успешной инсталляции <strong>t-CMS</strong> - заполни файл <em>./ t-admin/config.php</em> (в корне) 
+            <p>Для успешной инсталляции <strong>t-CMS</strong> - заполни файл <em>./ t-admin / config.php</em> (в корне) 
             в соответствии с твоим хостингом.</p>
             <p>Если ты уже установил <strong>t-CMS</strong>, то:</p> 
             <p>
