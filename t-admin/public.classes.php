@@ -1,0 +1,138 @@
+<?php
+
+/**
+ * @author Vikky Shostak <vikkyshostak@gmail.com>
+ * @version 0.1
+ */
+    
+class PublicPages
+{
+    
+    public function getHead()
+    {    
+        
+        $db = new mysqli(DBserver, DBuser, DBpassword, DBbase);
+        $db->set_charset('utf8');
+
+        if ($db->connect_error) 
+        {
+            die('Connect Error (' . $db->connect_errno . ') ' . $db->connect_error);
+        }
+        
+            if (empty($_GET['blog']) || !isset($_GET['blog']))
+            {  
+
+                $query = $db->query("SELECT * FROM `t-settings` WHERE 1 LIMIT 1");            
+                $get = $query->fetch_array();
+
+                return $get;
+
+            }
+            else 
+            {
+
+                $query = $db->query("SELECT * FROM `t-content` WHERE `url`='{$_GET['blog']}' AND `is_page`='no' LIMIT 1");
+                $get = $query->fetch_array();
+
+                return $get;
+
+            }
+            
+            if (!empty($_GET['page']) || isset($_GET['page']))
+            {                  
+
+                $query = $db->query("SELECT * FROM `t-content` WHERE `url`='{$_GET['page']}' AND `is_page`='yes' LIMIT 1");
+                $get = $query->fetch_array();
+
+                return $get;
+
+            }
+
+    }
+    
+    public function getSettings()
+    {    
+        
+        $db = new mysqli(DBserver, DBuser, DBpassword, DBbase);
+        $db->set_charset('utf8');
+
+        if ($db->connect_error) 
+        {
+            die('Connect Error (' . $db->connect_errno . ') ' . $db->connect_error);
+        }
+        
+            if (empty($_GET) || !isset($_GET))
+            {  
+
+                $query = $db->query("SELECT * FROM `t-settings` WHERE 1 LIMIT 1");            
+                $get = $query->fetch_array();
+
+                return $get;
+
+            }
+            
+    }
+    
+    public function getList()
+    {       
+        
+        $db = new mysqli(DBserver, DBuser, DBpassword, DBbase);
+        $db->set_charset('utf8');
+
+        if ($db->connect_error) 
+        {
+            die('Connect Error (' . $db->connect_errno . ') ' . $db->connect_error);
+        }
+        
+            if (empty($_GET) || !isset($_GET))
+            {
+                
+                $query = $db->query("SELECT * FROM `t-content` WHERE `is_page`='no' ORDER BY `id` DESC");
+
+                for ($i = 0; $get = $query->fetch_array(); $i++)
+                {
+                        echo '
+                                <p class="lead"><a href="' . BASE_URL . '/blog/' . $get['url'] . '">' . $get['title'] . '</a></p>
+                                <p>';
+                                
+                                if (empty($get['body_preview'])) { echo substr(strip_tags($get['body']), 0, 350).'...'; } else { echo strip_tags($get['body_preview']); }
+                        
+                                echo '</p>
+                                <p><i class="icon-time"></i> <span class="label label-info"><small>' . date('d.m.Y, H:i', strtotime($get['date'])) . '</small></span> <i class="icon-tags"></i> <span class="label">' . $get['tags'] . '</span></p>
+                                <hr />';
+                }
+                
+            }
+        
+            elseif ($_GET['options'] === 'blog')
+            {
+
+                $query = $db->query("SELECT * FROM `t-content` WHERE `url`='{$_GET['url']}' AND `is_page`='no' LIMIT 1");
+                $get = $query->fetch_array();
+
+                echo '<h1>' . $get['title'] . '</h1>
+                        <p>' . $get['body'] . '</p>
+                        <hr />
+                        <p><i class="icon-time"></i> <span class="label label-info"><small>' . date('d.m.Y, H:i', strtotime($get['date'])) . '</small></span> <i class="icon-tags"></i> <span class="label">' . $get['tags'] . '</span></p>
+                        <hr />';  
+                
+            }   
+            
+            elseif ($_GET['options'] === 'page')             
+            {
+                
+                $query = $db->query("SELECT * FROM `t-content` WHERE `url`='{$_GET['url']}' AND `is_page`='yes' LIMIT 1");
+                $get = $query->fetch_array();
+
+                echo '<h1>' . $get['title'] . '</h1>
+                        <p>' . $get['body'] . '</p>';   
+
+            }
+            
+    }
+		
+}
+
+$public = new PublicPages;
+
+?>

@@ -1,0 +1,19 @@
+AddDefaultCharset utf-8
+
+DirectoryIndex index.php
+
+RewriteEngine on
+RewriteBase /test/auth/
+
+Options +FollowSymlinks
+Options All -Indexes
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^login$ login.php
+RewriteRule ^login/logout$ login.php?logout
+
+RewriteCond %{HTTP_HOST} (.*)
+RewriteCond %{REQUEST_URI} /$ [NC]
+RewriteRule ^(.*)(/)$ $1 [L,R=301]
