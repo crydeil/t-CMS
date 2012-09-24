@@ -4,11 +4,10 @@
 
         <div class="row">
 
-            <div class="span9">
-                <h1>Привет, <?=$admin->getLogin()?>!</h1>
-            </div>
-            
-            <div class="span3">
+            <div class="span4">
+                <h1>Привет, <?=$header->getAdminLogin()?>!</h1>
+            </div>            
+            <div class="span8">
                 <?=$menu->getAdmin_0()?>
             </div>	
 
@@ -27,7 +26,7 @@
             </div>
 
             <div class="span9">
-                <?=$admin->getDashbord()?>
+                <?=$admin->getDashboard()?>
             </div>
 
         </div>

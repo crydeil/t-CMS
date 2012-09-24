@@ -5,9 +5,13 @@ session_start();
 ob_start('ob_gzhandler');
 
 require 't-admin/config.php';
-include 't-admin/public.classes.php';
-require_once 't-admin/public.visual.classes.php';
 
-include THEME.'/public/index.tpl';
+$settings = new Settings;
+$header = new PublicHeader;
+$menu = new PublicMenu;
+$public = new PublicList;
+$footer = new PublicFooter;
+
+include_once THEME.'/public/index.tpl';
 
 ?>

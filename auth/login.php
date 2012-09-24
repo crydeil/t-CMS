@@ -3,7 +3,9 @@
 session_start();
 
 require '../t-admin/config.php';
-require_once '../t-admin/admin.visual.classes.php';
+
+$header = new AdminHeader;
+$footer = new AdminFooter;
 
 $db = new mysqli(DBserver, DBuser, DBpassword, DBbase);
 $db->set_charset('utf8');

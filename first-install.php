@@ -3,7 +3,9 @@
 session_start();
 
 require 't-admin/config.php';
-require_once 't-admin/admin.visual.classes.php';
+
+$header = new AdminHeader;
+$footer = new AdminFooter;
 
 $db = new mysqli(DBserver, DBuser, DBpassword, DBbase);
 $db->set_charset('utf8');
@@ -113,7 +115,9 @@ else
                                                     `password`='{$hashed_password}',
                                                     `salt`='{$salt}'");
                         
-        $query2 = $db->query("UPDATE `t-settings` WHERE `id`='1' SET `title`='{$title}'");
+        $query2 = $db->query("INSERT INTO `t-settings` SET 
+                                                        `id`='1',
+                                                        `title`='{$title}'");
 
         echo '<h4>Поздравляем, Вы успешно зарегистрированы!</h4>
             <p><a href="' . BASE_URL . '/auth/login">Авторизоваться</a></p>';
@@ -122,8 +126,8 @@ else
     else
     {
 
-        echo '<h4>Возникли следующие ошибки</h4>' . $errort . '<p></p>
-            <p>Вернуться назад и <a href="' . BASE_URL . '/first-install.php">попробовать ещё раз</a>.</p>';
+        die ('<h4>Возникли следующие ошибки</h4>' . $errort . '<p></p>
+            <p>Вернуться назад и <a href="' . BASE_URL . '/first-install.php">попробовать ещё раз</a>.</p>');
 
     }
 }

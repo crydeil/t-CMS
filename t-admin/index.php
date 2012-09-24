@@ -5,8 +5,11 @@ session_start();
 ob_start('ob_gzhandler');
 
 require 'config.php';
-include 'admin.classes.php';
-require_once 'admin.visual.classes.php';
+
+$header = new AdminHeader;
+$breadcrumb = new AdminBreadcrumb;
+$menu = new AdminMenu;
+$footer = new AdminFooter;
 
 if (isset($_SESSION['user_id']))
 {
@@ -15,43 +18,53 @@ if (isset($_SESSION['user_id']))
         
         if(empty($_GET) || !isset($_GET))
         {
-            include THEME.'/admin/index.tpl';
+            $admin = new AdminDashboard;
+            include_once THEME.'/admin/index.tpl';
         }
         elseif($_GET['options'] === 'add' && $_GET['param'] === 'post')
         {
-            include THEME.'/admin/add.tpl';
+            $admin = new AdminAdd;
+            include_once THEME.'/admin/add.tpl';
         }
         elseif($_GET['options'] === 'add' && $_GET['param'] === 'page')
         {
-            include THEME.'/admin/add.tpl';
+            $admin = new AdminAdd;
+            include_once THEME.'/admin/add.tpl';
         }
         elseif($_GET['options'] === 'add' && $_GET['param'] === 'menu')
         {
-            include THEME.'/admin/add.tpl';
+            $admin = new AdminAdd;
+            include_once THEME.'/admin/add.tpl';
         }
         elseif($_GET['options'] === 'edit' && $_GET['param'] === 'post')
         {
-            include THEME.'/admin/edit.tpl';
+            $admin = new AdminEdit;
+            include_once THEME.'/admin/edit.tpl';
         }
         elseif($_GET['options'] === 'edit' && $_GET['param'] === 'page')
         {
-            include THEME.'/admin/edit.tpl';
+            $admin = new AdminEdit;
+            include_once THEME.'/admin/edit.tpl';
         }
         elseif($_GET['options'] === 'edit' && $_GET['param'] === 'menu')
         {
-            include THEME.'/admin/edit.tpl';
+            $admin = new AdminEdit;
+            include_once THEME.'/admin/edit.tpl';
         }
         elseif($_GET['options'] === 'list' && $_GET['param'] === 'post')
         {
-            include THEME.'/admin/list.tpl';
+            $admin = new AdminList;
+            include_once THEME.'/admin/list.tpl';
         }
         elseif($_GET['options'] === 'list' && $_GET['param'] === 'page')
         {
-            include THEME.'/admin/list.tpl';
+            $admin = new AdminList;
+            include_once THEME.'/admin/list.tpl';
         }
         elseif($_GET['options'] === 'list' && $_GET['param'] === 'menu')
         {
-            include THEME.'/admin/list.tpl';
+            $admin = new AdminList;
+            include_once THEME.'/admin/list.tpl';
         }
         
     }

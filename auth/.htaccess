@@ -1,6 +1,6 @@
 AddDefaultCharset utf-8
 
-DirectoryIndex index.php
+DirectoryIndex login.php
 
 RewriteEngine on
 RewriteBase /auth/

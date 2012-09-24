@@ -24,7 +24,7 @@
 
             <div class="span4">
                 
-                <?=$public->getSettings()['body']?>                    
+                <?=$settings->getSettings()['body']?>                    
                 <?=$menu->getPublic_1()?>
                 
             </div>

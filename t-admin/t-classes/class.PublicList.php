@@ -5,74 +5,9 @@
  * @version 0.1
  */
     
-class PublicPages
+class PublicList
 {
-    
-    public function getHead()
-    {    
-        
-        $db = new mysqli(DBserver, DBuser, DBpassword, DBbase);
-        $db->set_charset('utf8');
 
-        if ($db->connect_error) 
-        {
-            die('Connect Error (' . $db->connect_errno . ') ' . $db->connect_error);
-        }
-        
-            if (empty($_GET['blog']) || !isset($_GET['blog']))
-            {  
-
-                $query = $db->query("SELECT * FROM `t-settings` WHERE 1 LIMIT 1");            
-                $get = $query->fetch_array();
-
-                return $get;
-
-            }
-            else 
-            {
-
-                $query = $db->query("SELECT * FROM `t-content` WHERE `url`='{$_GET['blog']}' AND `is_page`='no' LIMIT 1");
-                $get = $query->fetch_array();
-
-                return $get;
-
-            }
-            
-            if (!empty($_GET['page']) || isset($_GET['page']))
-            {                  
-
-                $query = $db->query("SELECT * FROM `t-content` WHERE `url`='{$_GET['page']}' AND `is_page`='yes' LIMIT 1");
-                $get = $query->fetch_array();
-
-                return $get;
-
-            }
-
-    }
-    
-    public function getSettings()
-    {    
-        
-        $db = new mysqli(DBserver, DBuser, DBpassword, DBbase);
-        $db->set_charset('utf8');
-
-        if ($db->connect_error) 
-        {
-            die('Connect Error (' . $db->connect_errno . ') ' . $db->connect_error);
-        }
-        
-            if (empty($_GET) || !isset($_GET))
-            {  
-
-                $query = $db->query("SELECT * FROM `t-settings` WHERE 1 LIMIT 1");            
-                $get = $query->fetch_array();
-
-                return $get;
-
-            }
-            
-    }
-    
     public function getList()
     {       
         
@@ -132,7 +67,5 @@ class PublicPages
     }
 		
 }
-
-$public = new PublicPages;
 
 ?>
