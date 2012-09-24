@@ -13,7 +13,8 @@ website/blog is very desirable. The visual part (admin panel and theme by defaul
 * Redactor.JS WYSIWYG `v8.0.3`
 
 ### System requirements (server)
-* PHP `5.4.x`
+* Apache `2.3.x` (enabled module `mod_rewrite`)
+* PHP `5.4.x` (not less than `32 MB` of available memory)
 * MySQL `5.3.x`
 
 ### Simple Install
@@ -57,7 +58,8 @@ front-end фреймворка `Twitter Bootstrap v2.1.1` и `Font Awesome v2.0`
 * Redactor.JS WYSIWYG `v8.0.3`
 
 ### Системные требования (сервер)
-* PHP `5.4.x`
+* Apache `2.3.x` (с включённым модулем `mod_rewrite`)
+* PHP `5.4.x` (не менее `32 MB` доступной памяти)
 * MySQL `5.3.x`
 
 ### Простая установка
