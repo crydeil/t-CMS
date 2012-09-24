@@ -6,20 +6,23 @@ class PublicMenu
     public function getPublic_0()
     {
         
+        echo '<p></p>
+                <ul class="nav nav-pills pull-right">
+                    <li><a href="' . BASE_URL . '"><i class="icon-home"></i> На главную</a></li>';
+                                
         if (isset($_SESSION['user_id']))
         {
             
             if($_SESSION['user_id'] === '1')
             {
                 
-                echo '<p></p>
-                        <ul class="nav nav-pills nav-stacked">
-                            <li><a href="' . BASE_URL . '/auth/login"><i class="icon-signin"></i> Панель администратора</a></li>
-                        </ul>';
+                echo '<li><a href="' . BASE_URL . '/auth/login"><i class="icon-signin"></i> Панель администратора</a></li>';
                 
             }
             
         }
+        
+        echo '</ul>';
 
     }
     

@@ -17,7 +17,7 @@ class AdminList
                 if ($_GET['options'] === 'list' && $_GET['param'] === 'post')
                 {
 
-                    echo '<legend>Записи в блоге</legend>
+                    echo '<legend><i class="icon-comments-alt"></i> Записи в блоге</legend>
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -52,7 +52,7 @@ class AdminList
                 elseif ($_GET['options'] === 'list' && $_GET['param'] === 'page')
                 {
 
-                    echo '<legend>Страницы сайта</legend>
+                    echo '<legend><i class="icon-copy"></i> Страницы сайта</legend>
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -82,7 +82,7 @@ class AdminList
                 elseif ($_GET['options'] === 'list' && $_GET['param'] === 'menu')
                 {
 
-                    echo '<legend>Public menu block #1</legend>
+                    echo '<legend><i class="icon-link"></i> Public menu block #1</legend>
                         <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -108,7 +108,7 @@ class AdminList
                     echo '  </tbody>
                           </table>
 
-                        <legend>Public menu block #2</legend>
+                        <legend><i class="icon-link"></i> Public menu block #2</legend>
                         <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -134,7 +134,7 @@ class AdminList
                     echo '  </tbody>
                           </table>
 
-                        <legend>Public menu block #3</legend>
+                        <legend><i class="icon-link"></i> Public menu block #3</legend>
                         <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -160,7 +160,7 @@ class AdminList
                     echo '  </tbody>
                           </table>
 
-                        <legend>Public menu block #4</legend>
+                        <legend><i class="icon-link"></i> Public menu block #4</legend>
                         <table class="table table-striped">
                             <thead>
                                 <tr>

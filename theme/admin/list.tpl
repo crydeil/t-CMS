@@ -31,8 +31,4 @@
 
         </div>
 
-        <hr />
-
-    </div>
-
 <?=$footer->getAdmin()?>

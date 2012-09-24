@@ -40,13 +40,18 @@ if (isset($_SESSION['user_id']))
         {
             $admin = new AdminEdit;
             include_once THEME.'/admin/edit.tpl';
-        }
+        }        
         elseif($_GET['options'] === 'edit' && $_GET['param'] === 'page')
         {
             $admin = new AdminEdit;
             include_once THEME.'/admin/edit.tpl';
         }
         elseif($_GET['options'] === 'edit' && $_GET['param'] === 'menu')
+        {
+            $admin = new AdminEdit;
+            include_once THEME.'/admin/edit.tpl';
+        }
+        elseif($_GET['options'] === 'edit' && $_GET['param'] === 'settings')
         {
             $admin = new AdminEdit;
             include_once THEME.'/admin/edit.tpl';

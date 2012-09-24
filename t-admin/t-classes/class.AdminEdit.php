@@ -223,8 +223,7 @@ class AdminEdit
                     else
                     {  	
 
-                        $title = isset($_POST['title']) ? $db->real_escape_string($_POST['title']) : '';
-                        $body_preview = isset($_POST['body_preview']) ? $db->real_escape_string($_POST['body_preview']) : '';
+                        $title = isset($_POST['title']) ? $db->real_escape_string($_POST['title']) : '';                        
                         $body = isset($_POST['body']) ? $db->real_escape_string($_POST['body']) : '';
                         $url = isset($_POST['url']) ? $db->real_escape_string($_POST['url']) : '';
                         $meta_keywords = isset($_POST['meta_keywords']) ? $db->real_escape_string($_POST['meta_keywords']) : '';
@@ -418,10 +417,105 @@ class AdminEdit
                             }
 
                         }
+                        
+            }
+            
+            elseif ($_GET['options'] === 'edit' && $_GET['param'] === 'settings')
+            {
+
+                $query = $db->query("SELECT * FROM `t-settings` WHERE `id`='1' LIMIT 1");
+                $get = $query->fetch_array();
+
+                    if(empty($_POST['update_settings']) || !isset($_POST['update_settings']))
+                    {
+                        echo '<form class="form-inline" action="" method="post">
+
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#main" data-toggle="tab">Основное</a></li> 
+                                <li><a href="#seo" data-toggle="tab">SEO</a></li>                                               
+                            </ul>
+
+                            <div class="tab-content">
+
+                                <div class="tab-pane active" id="main">                    
+                                    <legend>Название сайта</legend>
+                                    <p class="well well-small"><input class="input-xxlarge" type="text" name="title" value="' . $get['title'] . '" /></p>
+                                    <legend>Текст главной страницы</legend>                                    
+                                    <textarea id="editor" class="well well-small" name="body">' . $get['body'] . '</textarea>
+                                </div>  
+
+                                <div class="tab-pane" id="seo">                                                       
+                                    <legend>META Keywords</legend>
+                                    <p class="well well-small"><input class="input-xxlarge" name="meta_keywords" type="text" value="' . $get['meta_keywords'] . '" /></p>
+                                    <legend>META Description</legend>
+                                    <p class="well well-small"><input class="input-xxlarge" name="meta_description" type="text" value="' . $get['meta_description'] . '" /></p>
+                                </div>
+
+                            </div>
+
+                        <hr />
+
+                            <input type="submit" class="btn btn-success" name="update_settings" value="Обновить главную страницу" />                            
+                            
+                        </form>';
+
+                    }
+                    else
+                    {  	
+
+                        $title = isset($_POST['title']) ? $db->real_escape_string($_POST['title']) : '';                        
+                        $body = isset($_POST['body']) ? $db->real_escape_string($_POST['body']) : '';                        
+                        $meta_keywords = isset($_POST['meta_keywords']) ? $db->real_escape_string($_POST['meta_keywords']) : '';
+                        $meta_description = isset($_POST['meta_description']) ? $db->real_escape_string($_POST['meta_description']) : '';
+
+                        $error = false;
+                        $errort = '';
+
+                        if (strlen($title) < 5)
+                        {
+
+                            $error = true;
+                            $errort .= '- Длина названия сайта должна быть не менее 5-ти символов.<br />';
+
+                        }                        
+
+                        if(!$error)
+                        {
+
+                            $query = $db->query("UPDATE `t-settings` SET 
+                                                                        `title`='{$title}', 
+                                                                        `body`='{$body}', 
+                                                                        `meta_keywords`='{$meta_keywords}', 
+                                                                        `meta_description`='{$meta_description}'
+
+                                                                        WHERE `id`='1'", MYSQLI_USE_RESULT);
+
+                            echo '<div class="alert alert-block alert-success">  
+                                    <h4>Главная страница сайта успешно обновлена!</h4>
+                                    <p>Вы можете перейти в <a href="' . BASE_URL . '">на главную страницу</a> сайта или продолжить <a href="' . BASE_URL . '/t-admin/index/edit/settings">редактирование</a>.
+                                </div>';
+
+                        }
+                        else
+                        {
+
+                            echo '<div class="alert alert-block alert-error">  
+                                    <h4>Главная страница сайта не была обновлена!</h4>
+                                    <p></p>
+                                    <p>Произошли следующие ошибки:<br />
+                                    ' . $errort. '</p>
+                                    <p><a href="javascript:history.go(-1)">Вернуться назад</a></p>                                
+                                </div>';
+
+                        }
+
+                    }
             }
 
     }
-    		
+    
+   
+    
 }
 
 ?>

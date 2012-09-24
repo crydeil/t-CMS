@@ -62,6 +62,13 @@ class AdminBreadcrumb
                 <li>Редактирование пункта меню</li>';
             
         }
+        elseif ($_GET['options'] === 'edit' && $_GET['param'] === 'settings')
+        {
+            
+            echo '<li><a href="' . BASE_URL . '/t-admin/index">Рабочий стол</a> <span class="divider">/</span></li>                
+                <li>Редактирование главной страницы сайта</li>';
+            
+        }
         elseif ($_GET['options'] === 'list' && $_GET['param'] === 'post')
         {
             

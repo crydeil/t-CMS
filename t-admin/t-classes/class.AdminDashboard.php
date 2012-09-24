@@ -16,7 +16,7 @@ class AdminDashboard
 
             $query = $db->query("SELECT * FROM `t-content` WHERE `is_page`='no' ORDER BY `id` DESC LIMIT 10");
 
-            echo '<legend>Последние 10 записей в блоге</legend>
+            echo '<legend><i class="icon-comments-alt"></i> Последние 10 записей в блоге</legend>
                 <table class="table table-striped">
                     <thead>
                         <tr>

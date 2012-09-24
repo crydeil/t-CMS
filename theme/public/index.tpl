@@ -4,11 +4,12 @@
 
         <div class="row">
 
-            <div class="span9">                    
-                <a href="<?=BASE_URL?>">На главную</a>
+            <div class="span6">
+                <p></p>
+                <p class="lead"><?=$settings->getMainTitle()?></p>
             </div>
 
-            <div class="span3">
+            <div class="span6">
                 <?=$menu->getPublic_0()?>
             </div>
             
@@ -24,15 +25,11 @@
 
             <div class="span4">
                 
-                <?=$settings->getSettings()['body']?>                    
+                <?=$settings->getMainBody()?>                    
                 <?=$menu->getPublic_1()?>
                 
             </div>
             
         </div>
-
-        <hr />
-
-    </div>
 
 <?=$footer->getPublic()?>

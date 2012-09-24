@@ -1,5 +1,5 @@
 # t-CMS (by [totstar](http://totstar.ru) projects team)
-### Last version: `0.1 beta4` (24-09-2012)
+### Last version: `0.1 beta5` (24-09-2012, 23:44)
 
 ===
 
