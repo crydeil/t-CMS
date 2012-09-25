@@ -4,7 +4,7 @@
 ===
 
 ## English
-Easy and flexible micro CMS for everyday tasks when there is no time to learn Drupal or WordPress, and your 
+Easy and flexible micro-CMS for everyday tasks when there is no time to learn Drupal or WordPress, and your 
 website/blog is very desirable. The visual part (admin panel and theme by default) is made using front-end framework 
 `Twitter Bootstrap v2.1.1` and `Font Awesome v2.0`.
 

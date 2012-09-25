@@ -34,6 +34,14 @@ $(document).ready(function()
     
     $("#t-admin-menu").sticky({ 
         topSpacing: 10  
+    });
+    
+    $("img#t-cms-logo").hover(
+    function(){        
+        $(this).attr('src','/theme/img/t-cms-logo-hover.png')
+    }, 
+    function(){
+        $(this).attr('src','/theme/img/t-cms-logo.png')
     })
-
+        
 })

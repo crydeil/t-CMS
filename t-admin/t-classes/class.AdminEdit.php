@@ -340,8 +340,7 @@ class AdminEdit
                         $query = $db->query("SELECT * FROM `t-menu` WHERE `id`='{$_GET['id']}' ORDER BY `id` DESC");
                         $get = $query->fetch_array();
                         
-                        echo '<input type="submit" class="btn btn-success" name="edit_menu_item" value="Обновить пункт меню" />
-                                <a href="' . BASE_URL . '/t-admin/index/list/menu" class="btn btn-inverse">Закрыть без сохранения</a>
+                        echo '<input type="submit" class="btn btn-success" name="edit_menu_item" value="Обновить пункт меню" />                                
                                 <a href="#myModal-' . $get['id'] . '" role="button" class="btn btn-danger" data-toggle="modal">Удалить</a>
 
                                 <div style="display: none;" class="modal" id="myModal-' . $get['id'] . '" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -492,7 +491,7 @@ class AdminEdit
 
                             echo '<div class="alert alert-block alert-success">  
                                     <h4>Главная страница сайта успешно обновлена!</h4>
-                                    <p>Вы можете перейти в <a href="' . BASE_URL . '">на главную страницу</a> сайта или продолжить <a href="' . BASE_URL . '/t-admin/index/edit/settings">редактирование</a>.
+                                    <p>Вы можете перейти <a href="' . BASE_URL . '" target="_blank">на главную страницу</a> сайта или продолжить <a href="' . BASE_URL . '/t-admin/index/edit/settings">редактирование</a>.
                                 </div>';
 
                         }
