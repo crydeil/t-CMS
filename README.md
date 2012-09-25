@@ -1,5 +1,12 @@
-# t-CMS (by [totstar](http://totstar.ru) projects team)
-### Last version: `0.1 beta5` (24-09-2012, 23:44)
+<table>
+<tbody>
+<tr>
+<td><img src="https://raw.github.com/VikkyShostak/t-CMS/master/theme/img/t-cms-logo.png"></td>
+<td>By <a href="http://totstar.ru" target="_blank">totstar</a> projects team<br />
+Last version: <code>0.1 beta5</code> (25-09-2012, 11:29)</td>
+</tr>
+</tbody>
+</table>
 
 ===
 
