@@ -1,0 +1,15 @@
+User-agent: *
+# Directories
+Disallow: /auth
+Disallow: /t-admin
+Disallow: /theme
+# Files
+Disallow: /README.md
+Disallow: /first-install.php
+Disallow: /upload.php
+# Paths
+Disallow: /auth/login
+Disallow: /auth/login/logout
+
+# Host: www.your-site.com
+# Sitemap: http://www.your-site.com/sitemap.xml
