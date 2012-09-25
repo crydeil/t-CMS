@@ -18,38 +18,30 @@ class PublicHeader {
             die('Connect Error (' . $db->connect_errno . ') ' . $db->connect_error);
         }
         
-            if (empty($_GET['blog']) || !isset($_GET['blog']))
+            if (empty($_GET['options']) || !isset($_GET['options']))
             {  
 
                 $query = $db->query("SELECT * FROM `t-settings` WHERE 1 LIMIT 1");            
-                $get = $query->fetch_array();
-
-                return $get;
-
-            }
-            else 
-            {
-
-                $query = $db->query("SELECT * FROM `t-content` WHERE `url`='{$_GET['blog']}' AND `is_page`='no' LIMIT 1");
                 $get = $query->fetch_array();
 
                 return $get;
 
             }
             
-            if (empty($_GET['page']) || !isset($_GET['page']))
-            {                  
+            elseif ($_GET['options'] === 'blog') 
+            {
 
-                $query = $db->query("SELECT * FROM `t-settings` WHERE 1 LIMIT 1");            
+                $query = $db->query("SELECT * FROM `t-content` WHERE `url`='{$_GET['url']}' AND `is_page`='no' LIMIT 1");
                 $get = $query->fetch_array();
 
                 return $get;
 
             }
-            else
+            
+            elseif ($_GET['options'] === 'page')            
             {  
 
-                $query = $db->query("SELECT * FROM `t-content` WHERE `url`='{$_GET['page']}' AND `is_page`='yes' LIMIT 1");
+                $query = $db->query("SELECT * FROM `t-content` WHERE `url`='{$_GET['url']}' AND `is_page`='yes' LIMIT 1");
                 $get = $query->fetch_array();
 
                 return $get;
@@ -77,10 +69,11 @@ class PublicHeader {
                         <link href="' . THEME . '/css/bootstrap.min.css" rel="stylesheet" />
                         <link href="' . THEME . '/css/font-awesome.css" rel="stylesheet" />
                                                 
-                        <script src="http://code.jquery.com/jquery-latest.js"></script>
+                        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
                         <script src="' . THEME . '/js/bootstrap.min.js"></script>
                                                                         
                         <script src="' . THEME . '/js/jquery.sticky.js"></script>
+                        <script src="' . THEME . '/js/jquery.tcms.public.js"></script>
                         
                 </head>
                 <body>';

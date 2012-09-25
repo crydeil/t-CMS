@@ -25,7 +25,7 @@ class AdminHeader
                     <link href="' . THEME . '/css/font-awesome.css" rel="stylesheet" />
                     <link href="' . THEME . '/js/redactor/redactor.css" rel="stylesheet" />
 
-                    <script src="http://code.jquery.com/jquery-latest.js"></script>        
+                    <script src="http://code.jquery.com/jquery-latest.min.js"></script>        
                     <script src="' . THEME . '/js/bootstrap.min.js"></script>
 
                     <script src="' . THEME . '/js/redactor/redactor.min.js"></script>
