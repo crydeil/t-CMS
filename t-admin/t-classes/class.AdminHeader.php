@@ -34,6 +34,8 @@ class AdminHeader
 
                     <script src="' . THEME . '/js/jquery.sticky.js"></script>
                     <script src="' . THEME . '/js/jquery.tcms.admin.js"></script>
+                    
+                    <link rel="icon" type="image/x-icon" href="' . THEME . '/img/t-cms-favicon.png" />
 
                 </head>
                 <body>';
