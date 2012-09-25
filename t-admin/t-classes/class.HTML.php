@@ -5,7 +5,8 @@
  * @version 0.1
  */
 
-class PublicHeader {
+class HTML 
+{
     
     public function getMetaTitle()
     {    
@@ -50,7 +51,41 @@ class PublicHeader {
 
     }
     
-    public function getPublic()
+    public function getAdminHeader()
+    {
+       
+        echo '<!DOCTYPE html>
+
+                <html>
+
+                <head>
+
+                    <meta content="text/html; charset=utf-8" />
+
+                    <title>Панель управления :: t-CMS</title>
+
+                    <link href="' . THEME . '/css/bootstrap.min.css" rel="stylesheet" />
+                    <link href="' . THEME . '/css/font-awesome.css" rel="stylesheet" />
+                    <link href="' . THEME . '/js/redactor/redactor.css" rel="stylesheet" />
+
+                    <script src="http://code.jquery.com/jquery-latest.min.js"></script>        
+                    <script src="' . THEME . '/js/bootstrap.min.js"></script>
+
+                    <script src="' . THEME . '/js/redactor/redactor.min.js"></script>
+                    <script src="' . THEME . '/js/redactor/lang/redactor.ru.js"></script>
+                    <script src="' . THEME . '/js/jquery.synctranslit.min.js"></script>
+
+                    <script src="' . THEME . '/js/jquery.sticky.js"></script>
+                    <script src="' . THEME . '/js/jquery.tcms.admin.js"></script>
+                    
+                    <link rel="icon" type="image/x-icon" href="' . THEME . '/img/t-cms-favicon.png" />
+
+                </head>
+                <body>';
+
+    }
+        
+    public function getPublicHeader()
     { 
         
         echo '<!DOCTYPE html>
@@ -78,6 +113,40 @@ class PublicHeader {
                 </head>
                 <body>';
 
+    }
+    
+    public function getAdminFooter()
+    {
+        
+        echo '<hr />
+            
+                <div class="row">
+                
+                    <div class="span4">
+                    <small>&copy; 2012 <a href="http://totstar.ru" target="_blank">totstar</a> projects group</small>
+                    </div>
+                    
+                    <div class="span8">
+                    <small class="pull-right"><a href="https://github.com/VikkyShostak/t-CMS" target="_blank"><i class="icon-github"></i> t-CMS GitHub page</a></small>
+                    
+                    </div>
+                </div>
+                
+            <br />
+
+            </div>
+
+            </body>
+            </html>';
+        
+    }
+    
+    public function getPublicFooter()
+    {
+        
+        echo '</body>
+            </html>';
+        
     }
     
 }

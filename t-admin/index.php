@@ -4,12 +4,11 @@ session_start();
 
 ob_start('ob_gzhandler');
 
-require 'config.php';
+require $_SERVER['DOCUMENT_ROOT'].'/t-admin/config.php';
 
-$header = new AdminHeader;
-$breadcrumb = new AdminBreadcrumb;
-$menu = new AdminMenu;
-$footer = new AdminFooter;
+$HTML = new HTML;
+$BREADCRUMBS = new BREADCRUMBS;
+$MENU = new MENU;
 
 if (isset($_SESSION['user_id']))
 {
@@ -19,57 +18,57 @@ if (isset($_SESSION['user_id']))
         if(empty($_GET) || !isset($_GET))
         {
             $admin = new AdminDashboard;
-            include_once THEME.'/admin/index.tpl';
+            include_once $_SERVER['DOCUMENT_ROOT'].'/theme/admin/index.tpl';
         }
         elseif($_GET['options'] === 'add' && $_GET['param'] === 'post')
         {
             $admin = new AdminAdd;
-            include_once THEME.'/admin/add.tpl';
+            include_once $_SERVER['DOCUMENT_ROOT'].'/theme/admin/add.tpl';
         }
         elseif($_GET['options'] === 'add' && $_GET['param'] === 'page')
         {
             $admin = new AdminAdd;
-            include_once THEME.'/admin/add.tpl';
+            include_once $_SERVER['DOCUMENT_ROOT'].'/theme/admin/add.tpl';
         }
         elseif($_GET['options'] === 'add' && $_GET['param'] === 'menu')
         {
             $admin = new AdminAdd;
-            include_once THEME.'/admin/add.tpl';
+            include_once $_SERVER['DOCUMENT_ROOT'].'/theme/admin/add.tpl';
         }
         elseif($_GET['options'] === 'edit' && $_GET['param'] === 'post')
         {
             $admin = new AdminEdit;
-            include_once THEME.'/admin/edit.tpl';
+            include_once $_SERVER['DOCUMENT_ROOT'].'/theme/admin/edit.tpl';
         }        
         elseif($_GET['options'] === 'edit' && $_GET['param'] === 'page')
         {
             $admin = new AdminEdit;
-            include_once THEME.'/admin/edit.tpl';
+            include_once $_SERVER['DOCUMENT_ROOT'].'/theme/admin/edit.tpl';
         }
         elseif($_GET['options'] === 'edit' && $_GET['param'] === 'menu')
         {
             $admin = new AdminEdit;
-            include_once THEME.'/admin/edit.tpl';
+            include_once $_SERVER['DOCUMENT_ROOT'].'/theme/admin/edit.tpl';
         }
         elseif($_GET['options'] === 'edit' && $_GET['param'] === 'settings')
         {
             $admin = new AdminEdit;
-            include_once THEME.'/admin/edit.tpl';
+            include_once $_SERVER['DOCUMENT_ROOT'].'/theme/admin/edit.tpl';
         }
         elseif($_GET['options'] === 'list' && $_GET['param'] === 'post')
         {
             $admin = new AdminList;
-            include_once THEME.'/admin/list.tpl';
+            include_once $_SERVER['DOCUMENT_ROOT'].'/theme/admin/list.tpl';
         }
         elseif($_GET['options'] === 'list' && $_GET['param'] === 'page')
         {
             $admin = new AdminList;
-            include_once THEME.'/admin/list.tpl';
+            include_once $_SERVER['DOCUMENT_ROOT'].'/theme/admin/list.tpl';
         }
         elseif($_GET['options'] === 'list' && $_GET['param'] === 'menu')
         {
             $admin = new AdminList;
-            include_once THEME.'/admin/list.tpl';
+            include_once $_SERVER['DOCUMENT_ROOT'].'/theme/admin/list.tpl';
         }
         
     }

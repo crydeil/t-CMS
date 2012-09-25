@@ -4,12 +4,11 @@ session_start();
 
 ob_start('ob_gzhandler');
 
-require 't-admin/config.php';
+require $_SERVER['DOCUMENT_ROOT'].'/t-admin/config.php';
 
-$header = new PublicHeader;
-$menu = new PublicMenu;
-$public = new PublicList;
-$settings = new Settings;
-$footer = new PublicFooter;
+$HTML = new HTML;
+$SETTINGS = new SETTINGS;
+$MENU = new MENU;
+$CONTENT = new CONTENT;
 
-include_once THEME.'/public/index.tpl';
+include_once $_SERVER['DOCUMENT_ROOT'].'/theme/public/index.tpl';

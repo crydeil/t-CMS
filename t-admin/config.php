@@ -1,7 +1,7 @@
 <?php 
 
 // System paths
-define('BASE_URL', 'http://127.0.0.1:8080');
+define('BASE_URL', 'http://localhost');
 define('THEME', BASE_URL.'/theme');
 
 // MySQL connect
@@ -11,7 +11,7 @@ define('DBpassword', '');
 
 // MySQL prefix_ + table
 define('DBprefix', '');
-define('DBbase', DBprefix.'test');
+define('DBbase', DBprefix.'t_cms_base');
 
 // Autoload classes
 function __autoload($class)

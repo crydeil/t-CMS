@@ -5,10 +5,10 @@
  * @version 0.1
  */
     
-class PublicList
+class CONTENT
 {
 
-    public function getList()
+    public function getPublic()
     {       
         
         $db = new mysqli(DBserver, DBuser, DBpassword, DBbase);

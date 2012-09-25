@@ -5,7 +5,7 @@
  * @version 0.1
  */
 
-class AdminBreadcrumb
+class BREADCRUMBS
 {
     
     public function getAdmin()

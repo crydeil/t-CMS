@@ -1,6 +1,6 @@
 <?php
 
-require 't-admin/config.php';
+require $_SERVER['DOCUMENT_ROOT'].'/t-admin/config.php';
 
 $dir = 'uploads/';
  

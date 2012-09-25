@@ -2,10 +2,9 @@
 
 session_start();
 
-require '../t-admin/config.php';
+require $_SERVER['DOCUMENT_ROOT'].'/t-admin/config.php';
 
-$header = new AdminHeader;
-$footer = new AdminFooter;
+$HTML = new HTML;
 
 $db = new mysqli(DBserver, DBuser, DBpassword, DBbase);
 $db->set_charset('utf8');
@@ -15,7 +14,7 @@ if ($db->connect_error)
     die('Connect Error (' . $db->connect_errno . ') ' . $db->connect_error);
 }
 
-echo $header->getLogin();
+echo $HTML->getAdminHeader();
 
 echo '<div class="container">
         <div class="row">
@@ -141,8 +140,6 @@ echo '<div class="container">
             <p>Если ты попал на эту страницу случайно - переходи на <a href="' . BASE_URL . '">главную</a>.</p>
     </div>
 
-</div>
-
 </div>';
 
-echo $footer->getAdmin();
+echo $HTML->getAdminFooter();
