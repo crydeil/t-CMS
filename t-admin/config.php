@@ -18,5 +18,3 @@ function __autoload($class)
 {
     include_once $_SERVER['DOCUMENT_ROOT'].'/t-admin/t-classes/class.' . $class . '.php';
 }
-
-?>

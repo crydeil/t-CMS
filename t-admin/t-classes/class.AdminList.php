@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @author Vikky Shostak <vikkyshostak@gmail.com>
+ * @version 0.1
+ */
+
 class AdminList
 {
 
@@ -191,5 +196,3 @@ class AdminList
     }
     
 }
-
-?>

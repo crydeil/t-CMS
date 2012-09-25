@@ -13,5 +13,3 @@ $settings = new Settings;
 $footer = new PublicFooter;
 
 include_once THEME.'/public/index.tpl';
-
-?>

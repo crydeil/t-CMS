@@ -23,5 +23,3 @@ if ($_FILES['file']['type'] == 'image/png'
 	
     echo stripslashes(json_encode($array));   
 }
-
-?>

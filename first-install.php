@@ -156,5 +156,3 @@ echo '</div>
 </div>';
 
 echo $footer->getAdmin();
-
-?>
