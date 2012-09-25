@@ -75,8 +75,8 @@ class HTML
                     <script src="' . THEME . '/js/redactor/lang/redactor.ru.js"></script>
                     <script src="' . THEME . '/js/jquery.synctranslit.min.js"></script>
 
-                    <script src="' . THEME . '/js/jquery.sticky.js"></script>
-                    <script src="' . THEME . '/js/jquery.tcms.admin.js"></script>
+                    <script src="' . THEME . '/js/jquery.sticky.min.js"></script>
+                    <script src="' . THEME . '/js/jquery.tcms.admin.min.js"></script>
                     
                     <link rel="icon" type="image/x-icon" href="' . THEME . '/img/t-cms-favicon.png" />
 
@@ -107,7 +107,7 @@ class HTML
                         <script src="http://code.jquery.com/jquery-latest.min.js"></script>
                         <script src="' . THEME . '/js/bootstrap.min.js"></script>
                                                                         
-                        <script src="' . THEME . '/js/jquery.sticky.js"></script>
+                        <script src="' . THEME . '/js/jquery.sticky.min.js"></script>
                         <script src="' . THEME . '/js/jquery.tcms.public.js"></script>
                         
                 </head>

@@ -6,7 +6,7 @@
 
             <div class="span6">
                 <p></p>
-                <p class="lead"><?=$SETTINGS->getMainTitle()?></p>
+                <p class="lead"><?=$CONTENT->getHomePage()['title']?></p>
             </div>
 
             <div class="span6">
@@ -25,7 +25,7 @@
 
             <div class="span4">
                 
-                <?=$SETTINGS->getMainBody()?>                    
+                <?=$CONTENT->getHomePage()['body']?>                    
                 <?=$MENU->getPublic_1()?>
                 
             </div>

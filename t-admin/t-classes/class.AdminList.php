@@ -31,7 +31,7 @@ class AdminList
                         </thead>
                         <tbody>';
 
-                    $query = $db->query("SELECT * FROM `t-content` WHERE `is_page`='no' ORDER BY `id` DESC");
+                    $query = $db->query("SELECT * FROM `t-content` WHERE `is_page`='0' ORDER BY `id` DESC");
 
                     for ($i = 0; $get = $query->fetch_array(); $i++)
                     {
@@ -66,7 +66,7 @@ class AdminList
                         </thead>
                         <tbody>';
 
-                    $query = $db->query("SELECT * FROM `t-content` WHERE `is_page`='yes' ORDER BY `id` DESC");
+                    $query = $db->query("SELECT * FROM `t-content` WHERE `is_page`='1' ORDER BY `id` DESC");
 
                     for ($i = 0; $get = $query->fetch_array(); $i++)
                     {
