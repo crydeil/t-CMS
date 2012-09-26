@@ -6,17 +6,27 @@ $(document).ready(function()
         var preButtonFn = '<pre>' + selectedText + '</pre><br />';        
         $('#editor').execCommand('inserthtml', preButtonFn);
     }
+    
+    codeButton = function() {   
+        var selectedText = $('#editor').getSelected();
+        var codeButtonFn = '<code>' + selectedText + '</code>';        
+        $('#editor').execCommand('inserthtml', codeButtonFn);
+    }
            
     $('#editor').redactor({ 
         lang: 'ru',
         minHeight: 200,
         imageUpload: '/upload.php', 
-        buttonsAdd: ['|', 'pre'], 
+        buttonsAdd: ['|', 'pre', 'code'], 
         buttonsCustom: {
             pre: {
-                title: 'Вставить тег PRE', 
+                title: 'Обернуть в тег <PRE>', 
                 callback: preButton
-            }            
+            },
+            code: {
+                title: 'Обернуть в тег <CODE>', 
+                callback: codeButton
+            }
         }   
     });
 
