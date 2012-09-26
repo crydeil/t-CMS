@@ -81,7 +81,18 @@ class PublicPage
                                 <p class="lead"><a href="' . BASE_URL . '/blog/' . $get['url'] . '">' . $get['title'] . '</a></p>
                                 <p>';
                                 
-                                if (empty($get['body_preview'])) { echo substr(strip_tags($get['body']), 0, 350).'...'; } else { echo strip_tags($get['body_preview']); }
+                                if (empty($get['body_preview']) || !isset($get['body_preview'])) 
+                                { 
+                                    
+                                    echo substr(strip_tags($get['body']), 0, strpos($get['body'], ' ', 350)).'...'; 
+                                    
+                                } 
+                                else 
+                                { 
+                                    
+                                    echo strip_tags(trim($get['body_preview'])).'...'; 
+                                    
+                                }
                         
                                 echo '</p>
                                 <p><i class="icon-time"></i> <span class="label label-info"><small>' . date('d.m.Y, H:i', strtotime($get['date'])) . '</small></span> <i class="icon-tags"></i> <span class="label">' . $get['tags'] . '</span></p>
@@ -99,8 +110,10 @@ class PublicPage
                 echo '<h1>' . $get['title'] . '</h1>
                         <p>' . $get['body'] . '</p>
                         <hr />
-                        <p><i class="icon-time"></i> <span class="label label-info"><small>' . date('d.m.Y, H:i', strtotime($get['date'])) . '</small></span> <i class="icon-tags"></i> <span class="label">' . $get['tags'] . '</span></p>
-                        <hr />';  
+                        <p><i class="icon-time"></i> <span class="label label-info"><small>' . date('d.m.Y, H:i', strtotime($get['date'])) . '</small></span> <i class="icon-tags"></i> <span class="label">' . $get['tags'] . '</span>
+                        <script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
+                        <span class="pull-right yashare-auto-init" data-yashareL10n="ru" data-yashareType="none" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,gplus,lj"></span></p>
+                        <br />';  
                 
             }   
             

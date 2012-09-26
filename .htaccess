@@ -11,6 +11,7 @@ Options All -Indexes
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
+RewriteRule ^rss$ rss.php
 RewriteRule ^([0-9A-Za-z\-]+)$ index.php?options=page&url=$1
 RewriteRule ^blog/([0-9A-Za-z\-]+)$ index.php?options=blog&url=$1
 

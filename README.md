@@ -3,7 +3,7 @@
 <tr>
 <td><img src="https://raw.github.com/VikkyShostak/t-CMS/master/theme/img/t-cms-logo.png"></td>
 <td>By <a href="http://totstar.ru" target="_blank">totstar</a> projects team<br />
-Last version: <code>0.1 beta6</code> (26-09-2012, 16:11)</td>
+Last version: <code>0.1 beta7</code> (27-09-2012, 0:37)</td>
 </tr>
 </tbody>
 </table>
@@ -18,6 +18,9 @@ website/blog is very desirable. The visual part (admin panel and theme by defaul
 ### Also include:
 * jQuery Core `latest version`
 * Redactor.JS WYSIWYG `v8.0.3`
+
+### Global change:
+* Starting with version `0.1 beta7`: enable automatic RSS feed of the last ten entries from the blog
 
 ### System requirements (server)
 * Apache `2.3.x` (enabled `rewrite_module`)
@@ -63,6 +66,9 @@ front-end фреймворка `Twitter Bootstrap v2.1.1` и `Font Awesome v2.0`
 ### Также включены:
 * jQuery Core `последняя версия`
 * Redactor.JS WYSIWYG `v8.0.3`
+
+### Глобальные изменения:
+* Начиная с версии `0.1 beta7`: включена автоматическая RSS лента последних десяти записей из блога
 
 ### Системные требования (сервер)
 * Apache `2.3.x` (с включённым `rewrite_module`)

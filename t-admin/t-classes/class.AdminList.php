@@ -41,7 +41,18 @@ class AdminList
                                 <td><small><a href="' . BASE_URL . '/blog/' . $get['url'] . '" target="_blank">' . $get['title'] . '</a></small></td>
                                 <td><small>';
 
-                                if (empty($get['body_preview'])) { echo substr(strip_tags($get['body']), 0, 100); } else { echo strip_tags($get['body_preview']); }
+                                if (empty($get['body_preview'])) 
+                                { 
+                                    
+                                    echo substr(strip_tags($get['body']), 0, strpos($get['body'], ' ', 150)); 
+                                    
+                                } 
+                                else 
+                                { 
+                                    
+                                    echo substr(strip_tags($get['body_preview']), 0, strpos($get['body_preview'], ' ', 150)); 
+                                    
+                                }
 
                                 echo '...</small></td>
                                 <td><a href="' . BASE_URL . '/t-admin/index/edit/post/' . $get['id'] . '" role="button" class="btn btn-mini btn-warning" title="Редактировать"><i class="icon-pencil icon-white"></i></a></td>
@@ -73,7 +84,7 @@ class AdminList
 
                     echo '  <tr>                                
                                 <td><small><a href="' . BASE_URL . '/' . $get['url'] . '" target="_blank">' . $get['title'] . '</a></small></td>
-                                <td><small>' . substr(strip_tags($get['body']), 0, 100) . '...</small></td>
+                                <td><small>' . substr(strip_tags($get['body']), 0, strpos($get['body'], ' ', 150)) . '...</small></td>
                                 <td><a href="' . BASE_URL . '/t-admin/index/edit/page/' . $get['id'] . '" role="button" class="btn btn-mini btn-warning" title="Редактировать"><i class="icon-pencil icon-white"></i></a></td>
                             </tr>';
 

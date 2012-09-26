@@ -126,6 +126,8 @@ class Html
 
                         <meta name="keywords" content="' . $this->getMetaTitle()['meta_keywords'] . '" />
                         <meta name="description" content="' . $this->getMetaTitle()['meta_description'] . '" />
+                        
+                        <link rel="alternate" type="application/rss+xml" title="RSS" href="' . BASE_URL . '/rss" />
 
                         <link href="' . THEME . '/css/bootstrap.min.css" rel="stylesheet" />
                         <link href="' . THEME . '/css/font-awesome.css" rel="stylesheet" />
