@@ -3,7 +3,7 @@
 <tr>
 <td><img src="https://raw.github.com/VikkyShostak/t-CMS/master/theme/img/t-cms-logo.png"></td>
 <td>By <a href="http://totstar.ru" target="_blank">totstar</a> projects team<br />
-Last version: <code>0.1 beta6</code> (25-09-2012, 23:47)</td>
+Last version: <code>0.1 beta6</code> (26-09-2012, 13:01)</td>
 </tr>
 </tbody>
 </table>

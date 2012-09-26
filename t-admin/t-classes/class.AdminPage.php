@@ -5,7 +5,7 @@
  * @version 0.1
  */
 
-class AdminDashboard
+class AdminPage
 {
     
     public function getDashboard()

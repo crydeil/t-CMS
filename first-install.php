@@ -4,7 +4,7 @@ session_start();
 
 require $_SERVER['DOCUMENT_ROOT'].'/t-admin/config.php';
 
-$HTML = new HTML;
+$html = new Html;
 
 $db = new mysqli(DBserver, DBuser, DBpassword, DBbase);
 $db->set_charset('utf8');
@@ -14,7 +14,7 @@ if ($db->connect_error)
     die('Connect Error (' . $db->connect_errno . ') ' . $db->connect_error);
 }
 
-echo $HTML->getAdminHeader();
+echo $html->getAdminHeader();
 
 echo '<div class="container">
         <div class="row">
@@ -152,4 +152,4 @@ echo '</div>
 
     </div>';
 
-echo $HTML->getAdminFooter();
+echo $html->getAdminFooter();

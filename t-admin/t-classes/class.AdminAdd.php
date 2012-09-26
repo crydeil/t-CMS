@@ -66,6 +66,7 @@ class AdminAdd
                 }
                 else
                 {
+                    
                     $title = isset($_POST['title']) ? $db->real_escape_string($_POST['title']) : '';
                     $body_preview = isset($_POST['body_preview']) ? $db->real_escape_string($_POST['body_preview']) : '';
                     $body = isset($_POST['body']) ? $db->real_escape_string($_POST['body']) : '';
@@ -93,7 +94,7 @@ class AdminAdd
 
                     }
 
-                    if(!$error)
+                    if (!$error)
                     {
 
                         $query = $db->query("INSERT INTO `t-content` SET 
@@ -164,12 +165,12 @@ class AdminAdd
 
                             <input type="submit" class="btn btn-primary" name="add_page" value="Добавить страницу" />	
 
-                    </form>
-                    ';
+                    </form>';
 
                 }
                 else
                 {
+                    
                     $title = isset($_POST['title']) ? $db->real_escape_string($_POST['title']) : '';                    
                     $body = isset($_POST['body']) ? $db->real_escape_string($_POST['body']) : '';
                     $url = isset($_POST['url']) ? $db->real_escape_string($_POST['url']) : '';
@@ -195,7 +196,7 @@ class AdminAdd
 
                     }
 
-                    if(!$error)
+                    if (!$error)
                     {
 
                         $query = $db->query("INSERT INTO `t-content` SET 
@@ -204,7 +205,7 @@ class AdminAdd
                                                                     `body`='{$body}', 
                                                                     `meta_keywords`='{$meta_keywords}', 
                                                                     `meta_description`='{$meta_description}',
-                                                                    `is_page`='yes'", MYSQLI_USE_RESULT);
+                                                                    `is_page`='1'", MYSQLI_USE_RESULT);
                         
                         echo '<div class="alert alert-block alert-success">  
                                 <h4>Страница успешно создана!</h4>
@@ -258,10 +259,10 @@ class AdminAdd
                             <legend>Расположить в блоке меню</legend>
                             <p class="well well-small">
                             <select class="input-xxlarge" name="menu_name" id="menu_name">
-                              <option>Public menu block #1</option>
-                              <option>Public menu block #2</option>
-                              <option>Public menu block #3</option>
-                              <option>Public menu block #4</option>
+                              <option>Menu block #1</option>
+                              <option>Menu block #2</option>
+                              <option>Menu block #3</option>
+                              <option>Menu block #4</option>
                             </select> 
                             <select class="input-small" name="item_order" id="item_order">                              
                               <option>0</option>
@@ -287,6 +288,7 @@ class AdminAdd
                 }
                 else
                 {
+                    
                     $menu_title = isset($_POST['menu_title']) ? $db->real_escape_string($_POST['menu_title']) : '';
                     $menu_url = isset($_POST['menu_url']) ? $db->real_escape_string($_POST['menu_url']) : '';
                     $menu_name = isset($_POST['menu_name']) ? $db->real_escape_string($_POST['menu_name']) : '';
@@ -302,7 +304,7 @@ class AdminAdd
 
                     } 
 
-                    if(!$error)
+                    if (!$error)
                     {
                         
                         $query = $db->query("INSERT INTO `t-menu` SET 
@@ -312,7 +314,7 @@ class AdminAdd
                                                                     
                         echo '<div class="alert alert-block alert-success">  
                             <h4>Пункт меню успешно создан!</h4>
-                            <p>Вы можете перейти к <a href="' . BASE_URL . '/t-admin/index/list/menu">списку пунктов меню</a> или <a href="' . BASE_URL . '/t-admin/index/add/menu/' . $get['id'] . '">добавить ещё один</a>.
+                            <p>Вы можете перейти к <a href="' . BASE_URL . '/t-admin/index/list/menu">списку пунктов меню</a> или <a href="' . BASE_URL . '/t-admin/index/add/menu">добавить ещё один</a>.
                         </div>';
 
                     }

@@ -1,4 +1,4 @@
-<?=$HTML->getAdminHeader()?>
+<?=$html->getAdminHeader()?>
                     
     <div class="container">
 
@@ -8,7 +8,7 @@
                 <p><img id="t-cms-logo" src="<?=THEME?>/img/t-cms-logo.png" alt="t-CMS logo" /></p>
             </div>                        
             <div class="span10">
-                <p><?=$MENU->getAdmin_0()?></p>
+                <p><?=$menu->getAdminTech()?></p>
             </div>	
 
         </div>
@@ -16,11 +16,11 @@
         <div class="row">
 
             <div class="span12">
-                <?=$BREADCRUMBS->getAdmin()?>			
+                <?=$breadcrumbs->getAdmin()?>			
             </div>
 
             <div class="span3">
-                <?=$MENU->getAdmin_1()?>
+                <?=$menu->getAdmin()?>
             </div>
 
             <div class="span9">
@@ -29,4 +29,4 @@
 
         </div>
 
-<?=$HTML->getAdminFooter()?>
+<?=$html->getAdminFooter()?>

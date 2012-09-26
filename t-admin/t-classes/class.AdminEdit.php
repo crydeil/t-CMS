@@ -25,7 +25,7 @@ class AdminEdit
                 $query = $db->query("SELECT * FROM `t-content` WHERE `id`='{$_GET['id']}' LIMIT 1");
                 $get = $query->fetch_array();
 
-                    if(empty($_POST['update_post']) || !isset($_POST['update_post']))
+                    if (empty($_POST['update_post']) || !isset($_POST['update_post']))
                     {
                         echo '<form class="form-inline" action="" method="post">
                         
@@ -78,7 +78,7 @@ class AdminEdit
                         
                         </form>';
                     
-                        if(!empty($_POST['delete_post']) || isset($_POST['delete_post']))
+                        if (!empty($_POST['delete_post']) || isset($_POST['delete_post']))
                         {	
 
                             $query = $db->query("DELETE FROM `t-content` WHERE `id`='{$_GET['id']}' LIMIT 1");
@@ -118,10 +118,10 @@ class AdminEdit
                             
                         }
                         
-                        if(!$error)
+                        if (!$error)
                         {
 
-                        $query = $db->query("UPDATE `t-content` SET 
+                            $query = $db->query("UPDATE `t-content` SET 
                                                                     `title`='{$title}', 												
                                                                     `url`='{$url}', 
                                                                     `body_preview`='{$body_preview}', 
@@ -132,10 +132,11 @@ class AdminEdit
 
                                                                     WHERE `id`='{$_GET['id']}'", MYSQLI_USE_RESULT);
                         
-                        echo '<div class="alert alert-block alert-success">  
-                                <h4>Запись "' . $get['title'] . '" успешно обновлена!</h4>
-                                <p>Вы можете перейти к <a href="' . BASE_URL . '/t-admin/index/list/post">списку записей</a> блога или продолжить <a href="' . BASE_URL . '/t-admin/index/edit/post/' . $get['id'] . '">редактирование</a>.
-                            </div>';
+                            echo '<div class="alert alert-block alert-success">  
+                                    <h4>Запись "' . $get['title'] . '" успешно обновлена!</h4>
+                                    <p>Вы можете перейти к <a href="' . BASE_URL . '/t-admin/index/list/post">списку 
+                                        записей</a> блога или продолжить <a href="' . BASE_URL . '/t-admin/index/edit/post/' . $get['id'] . '">редактирование</a>.
+                                </div>';
                         
                         }
                         else
@@ -161,7 +162,7 @@ class AdminEdit
                 $query = $db->query("SELECT * FROM `t-content` WHERE `id`='{$_GET['id']}' LIMIT 1");
                 $get = $query->fetch_array();
 
-                    if(empty($_POST['update_page']) || !isset($_POST['update_page']))
+                    if (empty($_POST['update_page']) || !isset($_POST['update_page']))
                     {
                         echo '<form class="form-inline" action="" method="post">
 
@@ -210,7 +211,7 @@ class AdminEdit
 
                         </form>';
 
-                        if(!empty($_POST['delete_page']) || isset($_POST['delete_page']))
+                        if (!empty($_POST['delete_page']) || isset($_POST['delete_page']))
                         {	
 
                             $query = $db->query("DELETE FROM `t-content` WHERE `id`='{$_GET['id']}' LIMIT 1");
@@ -248,7 +249,7 @@ class AdminEdit
 
                         }
 
-                        if(!$error)
+                        if (!$error)
                         {
 
                             $query = $db->query("UPDATE `t-content` SET 
@@ -301,7 +302,7 @@ class AdminEdit
                                 <p class="well well-small">
                                 ' . BASE_URL . '/ <select class="input-xlarge" name="menu_url" id="menu_url">';
 
-                                $query = $db->query("SELECT * FROM `t-content` WHERE `is_page`='yes' ORDER BY `id` DESC");
+                                $query = $db->query("SELECT * FROM `t-content` WHERE `is_page`='1' ORDER BY `id` DESC");
 
                                 for ($i = 0; $get = $query->fetch_array(); $i++)
                                 {
@@ -315,10 +316,10 @@ class AdminEdit
                                 <legend>Расположить в блоке меню</legend>
                                 <p class="well well-small">
                                 <select class="input-xxlarge" name="menu_name" id="menu_name">                                  
-                                  <option>Public menu block #1</option>
-                                  <option>Public menu block #2</option>
-                                  <option>Public menu block #3</option>
-                                  <option>Public menu block #4</option>
+                                  <option>Menu block #1</option>
+                                  <option>Menu block #2</option>
+                                  <option>Menu block #3</option>
+                                  <option>Menu block #4</option>
                                 </select> 
                                 <select class="input-small" name="item_order" id="item_order">                              
                                   <option>0</option>
@@ -358,7 +359,7 @@ class AdminEdit
 
                                 </form>';
 
-                            if(!empty($_POST['delete_menu_item']) || isset($_POST['delete_menu_item']))
+                            if (!empty($_POST['delete_menu_item']) || isset($_POST['delete_menu_item']))
                             {	
 
                                 $query = $db->query("DELETE FROM `t-menu` WHERE `id`='{$_GET['id']}' LIMIT 1");
@@ -386,7 +387,7 @@ class AdminEdit
                                 
                             }                            
 
-                            if(!$error)
+                            if (!$error)
                             {
 
                             $query = $db->query("UPDATE `t-menu` SET 
@@ -425,7 +426,7 @@ class AdminEdit
                 $query = $db->query("SELECT * FROM `t-settings` WHERE `id`='1' LIMIT 1");
                 $get = $query->fetch_array();
 
-                    if(empty($_POST['update_settings']) || !isset($_POST['update_settings']))
+                    if (empty($_POST['update_settings']) || !isset($_POST['update_settings']))
                     {
                         echo '<form class="form-inline" action="" method="post">
 
@@ -478,7 +479,7 @@ class AdminEdit
 
                         }                        
 
-                        if(!$error)
+                        if (!$error)
                         {
 
                             $query = $db->query("UPDATE `t-settings` SET 
@@ -512,7 +513,5 @@ class AdminEdit
             }
 
     }
-    
-   
     
 }

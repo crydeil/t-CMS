@@ -1,4 +1,4 @@
-<?=$HTML->getPublicHeader()?>
+<?=$html->getPublicPageHeader()?>
 
     <div class="container">
 
@@ -6,11 +6,11 @@
 
             <div class="span6">
                 <p></p>
-                <p class="lead"><?=$CONTENT->getHomePage()['title']?></p>
+                <p class="lead"><?=$public_page->getHomeTitle()?></p>
             </div>
 
             <div class="span6">
-                <?=$MENU->getPublic_0()?>
+                <?=$menu->getPublicPageTech()?>
             </div>
             
         </div>
@@ -20,13 +20,13 @@
         <div class="row">
             
             <div class="span8">                    
-                <?=$CONTENT->getPublic()?>
+                <?=$public_page->getContent()?>
             </div>
 
             <div class="span4">
                 
-                <?=$CONTENT->getHomePage()['body']?>                    
-                <?=$MENU->getPublic_1()?>
+                <?=$public_page->getHomeBody()?>                    
+                <?=$menu->getPublicPage1()?>
                 
             </div>
             
@@ -50,4 +50,4 @@
 
     <br />
 
-<?=$HTML->getPublicFooter()?>
+<?=$html->getPublicPageFooter()?>

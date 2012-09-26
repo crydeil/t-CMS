@@ -5,10 +5,10 @@
  * @version 0.1
  */
     
-class CONTENT
+class PublicPage
 {
     
-    public function getHomePage()
+    public function getHomeTitle()
     {    
         
         $db = new mysqli(DBserver, DBuser, DBpassword, DBbase);
@@ -22,11 +22,44 @@ class CONTENT
             $query = $db->query("SELECT * FROM `t-settings` WHERE `id`='1' LIMIT 1");            
             $get = $query->fetch_array();
 
-            return $get;
+            return $get['title'];
+            
+            if (!empty($_GET) || isset($_GET))
+            {
+                
+                $query = $db->query("SELECT * FROM `t-settings` WHERE `id`='1' LIMIT 1");            
+                $get = $query->fetch_array();
+                
+                return $get;
+                
+            }
+
+    }
+    
+    public function getHomeBody()
+    {    
+        
+        $db = new mysqli(DBserver, DBuser, DBpassword, DBbase);
+        $db->set_charset('utf8');
+
+        if ($db->connect_error) 
+        {
+            die('Connect Error (' . $db->connect_errno . ') ' . $db->connect_error);
+        }
+            
+            if (empty($_GET) || !isset($_GET))
+            {
+                
+                $query = $db->query("SELECT * FROM `t-settings` WHERE `id`='1' LIMIT 1");            
+                $get = $query->fetch_array();
+                
+                return $get['body'];
+                
+            }
 
     }
         
-    public function getPublic()
+    public function getContent()
     {       
         
         $db = new mysqli(DBserver, DBuser, DBpassword, DBbase);
