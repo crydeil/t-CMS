@@ -96,7 +96,7 @@ class AdminList
                         </thead>
                         <tbody>';
 
-                $query = $db->query("SELECT * FROM `t-menu` WHERE `menu_name`='Menu block #1' ORDER BY `menu_name` ASC");
+                $query = $db->query("SELECT * FROM `t-menu` WHERE `menu_name`='Menu block #1' ORDER BY `item_order` ASC");
 
                 for ($i = 0; $get = $query->fetch_array(); $i++)
                 {
@@ -122,7 +122,7 @@ class AdminList
                         </thead>
                         <tbody>';
 
-                $query = $db->query("SELECT * FROM `t-menu` WHERE `menu_name`='Menu block #2' ORDER BY `menu_name` ASC");
+                $query = $db->query("SELECT * FROM `t-menu` WHERE `menu_name`='Menu block #2' ORDER BY `item_order` ASC");
 
                 for ($i = 0; $get = $query->fetch_array(); $i++)
                 {
@@ -148,7 +148,7 @@ class AdminList
                         </thead>
                         <tbody>';
 
-                $query = $db->query("SELECT * FROM `t-menu` WHERE `menu_name`='Menu block #3' ORDER BY `menu_name` ASC");
+                $query = $db->query("SELECT * FROM `t-menu` WHERE `menu_name`='Menu block #3' ORDER BY `item_order` ASC");
 
                 for ($i = 0; $get = $query->fetch_array(); $i++)
                 {
@@ -174,7 +174,7 @@ class AdminList
                         </thead>
                         <tbody>';
 
-                $query = $db->query("SELECT * FROM `t-menu` WHERE `menu_name`='Menu block #4' ORDER BY `menu_name` ASC");
+                $query = $db->query("SELECT * FROM `t-menu` WHERE `menu_name`='Menu block #4' ORDER BY `item_order` ASC");
 
                 for ($i = 0; $get = $query->fetch_array(); $i++)
                 {
