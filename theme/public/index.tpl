@@ -41,7 +41,7 @@
             </div>
 
             <div class="span8">
-            <small class="pull-right"><a href="https://github.com/VikkyShostak/t-CMS" target="_blank"><i class="icon-github"></i> t-CMS GitHub page</a></small>
+            <small class="pull-right"><a href="<?=BASE_URL?>/rss" target="_blank"><i class="icon-rss"></i> RSS feed</a><br /><a href="https://github.com/VikkyShostak/t-CMS" target="_blank"><i class="icon-github"></i> t-CMS GitHub page</a></small>
 
             </div>
         </div>
