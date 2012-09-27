@@ -24,7 +24,7 @@ website/blog is very desirable. The visual part (admin panel and theme by defaul
 
 ### System requirements (server)
 * Apache `2.3.x` (enabled `rewrite_module`)
-* PHP `5.4.x` (not less than `32 MB` of available memory)
+* PHP `5.4.x` (not less than `32 MB` of available memory, enabled `php_curl`)
 * MySQL `5.3.x`
 
 ### Simple Install
@@ -72,7 +72,7 @@ front-end фреймворка `Twitter Bootstrap v2.1.1` и `Font Awesome v2.0`
 
 ### Системные требования (сервер)
 * Apache `2.3.x` (с включённым `rewrite_module`)
-* PHP `5.4.x` (не менее `32 MB` доступной памяти)
+* PHP `5.4.x` (не менее `32 MB` доступной памяти, включенное расширение `php_curl`)
 * MySQL `5.3.x`
 
 ### Простая установка

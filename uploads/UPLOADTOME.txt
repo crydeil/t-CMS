@@ -1,0 +1,9 @@
+English:
+
+Memo:
+- The rights to the folder CHMOD 777
+
+Русский:
+
+Памятка: 
+- Права на эту папку CHMOD 777 

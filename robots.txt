@@ -7,9 +7,11 @@ Disallow: /theme
 Disallow: /README.md
 Disallow: /first-install.php
 Disallow: /upload.php
+Disallow: /auth/login.php
 # Paths
 Disallow: /auth/login
 Disallow: /auth/login/logout
 
+# Uncomment bottom lines and fill them according to your domain and sitemap:
 # Host: www.your-site.com
 # Sitemap: http://www.your-site.com/sitemap.xml
