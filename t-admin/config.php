@@ -10,8 +10,8 @@ define('DBuser', 'root');
 define('DBpassword', '');
 
 // MySQL prefix_ + table
-define('DBprefix', '');
-define('DBbase', DBprefix.'t_cms_base');
+define('DBprefix', 't_');
+define('DBbase', DBprefix.'cms_base');
 
 // Autoload classes
 function __autoload($class)

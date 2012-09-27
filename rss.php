@@ -2,6 +2,8 @@
 
 ob_start('ob_gzhandler');
 
+header("Content-type: text/xml; charset=utf-8");
+
 require $_SERVER['DOCUMENT_ROOT'].'/t-admin/config.php';
 
 $db = new mysqli(DBserver, DBuser, DBpassword, DBbase);
@@ -19,12 +21,13 @@ $query_user = $db->query("SELECT * FROM `t-users` WHERE `id`='1' LIMIT 1");
 $get_site = $query_site->fetch_array();
 $get_user = $query_user->fetch_array();
 
-echo '<?xml version="1.0"?>
+echo '<?xml version="1.0" encoding="utf-8"?>
         <rss version="2.0">
             <channel>
                 <title>' . $get_site['title'] . '</title>
                 <link>' . BASE_URL . '</link>
-                <description>' . $get_site['meta_description'] . '</description>';
+                <description>' . $get_site['meta_description'] . '</description>
+                <language>ru</language>';
             
             for ($i = 0; $get = $query_post->fetch_array(); $i++)
             {
@@ -34,25 +37,25 @@ echo '<?xml version="1.0"?>
                         <link>' . BASE_URL . '/blog/' . $get['url'] . '</link>
                         <description>';
 
-                         if (empty($get['body_preview'])) 
+                         if (empty($get['body_preview']) || !isset($get['body_preview'])) 
                          { 
 
-                             echo substr(strip_tags($get['body']), 0, strpos($get['body'], ' ', 150)); 
+                             echo substr(strip_tags($get['body']), 0, strpos($get['body'], ' ', 150)) . '...'; 
 
                          } 
                          else 
                          { 
 
-                             echo substr(strip_tags($get['body_preview']), 0, strpos($get['body_preview'], ' ', 150)); 
+                             echo substr(strip_tags($get['body_preview']), 0, strpos($get['body_preview'], ' ', 100)) . '...'; 
 
                          }
 
                     echo '</description>
                     <author>' . $get_user['login'] . '</author>
                     <pubDate>' . date('D, j M Y G:i:s', strtotime($get['date'])) . ' GMT' . '</pubDate>
-                </item>
-            </channel>';        
-                 
+                </item>';
+                    
             }
-            
-        echo '</rss>';
+                
+        echo '</channel>
+            </rss>';

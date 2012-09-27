@@ -110,6 +110,22 @@ class AdminEdit
                             
                         }
                         
+                        if (strlen($body) < 150)
+                        {
+
+                            $error = true;
+                            $errort .= '- Длина записи должна быть не менее 150-ти символов.<br />';
+
+                        }
+
+                        if (strlen($body_preview) < 100)
+                        {
+
+                            $error = true;
+                            $errort .= '- Длина превью к записи должна быть не менее 100 символов.<br />';
+
+                        }
+                        
                         if (strlen($url) < 3)
                         {
                                 
