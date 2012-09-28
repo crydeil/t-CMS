@@ -65,8 +65,8 @@ class Html
                     <title>Панель управления :: t-CMS</title>
 
                     <link href="' . THEME . '/css/bootstrap.min.css" rel="stylesheet" />
-                    <link href="' . THEME . '/css/font-awesome.css" rel="stylesheet" />
-                    <link href="' . THEME . '/js/redactor/redactor.css" rel="stylesheet" />
+                    <link href="' . THEME . '/css/font-awesome.min.css" rel="stylesheet" />
+                    <link href="' . THEME . '/js/redactor/redactor.min.css" rel="stylesheet" />
 
                     <script src="http://code.jquery.com/jquery-latest.min.js"></script>        
                     <script src="' . THEME . '/js/bootstrap.min.js"></script>
@@ -130,10 +130,13 @@ class Html
                         <link rel="alternate" type="application/rss+xml" title="RSS" href="' . BASE_URL . '/rss" />
 
                         <link href="' . THEME . '/css/bootstrap.min.css" rel="stylesheet" />
-                        <link href="' . THEME . '/css/font-awesome.css" rel="stylesheet" />
+                        <link href="' . THEME . '/css/font-awesome.min.css" rel="stylesheet" />
+                        <link href="' . THEME . '/js/redactor/redactor.min.css" rel="stylesheet" />
                                                 
                         <script src="http://code.jquery.com/jquery-latest.min.js"></script>
                         <script src="' . THEME . '/js/bootstrap.min.js"></script>
+                            <script src="' . THEME . '/js/redactor/redactor.min.js"></script>
+                        <script src="' . THEME . '/js/redactor/lang/redactor.ru.js"></script>
                                                                         
                         <script src="' . THEME . '/js/jquery.sticky.min.js"></script>
                         <script src="' . THEME . '/js/jquery.tcms.public.js"></script>

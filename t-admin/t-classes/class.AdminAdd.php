@@ -261,7 +261,7 @@ class AdminAdd
                             <p class="well well-small">
                             ' . BASE_URL . '/ <select class="input-xlarge" name="menu_url" id="menu_url">';
                             
-                            $query = $db->query("SELECT * FROM `t-content` WHERE `is_page`='yes' ORDER BY `id` DESC");
+                            $query = $db->query("SELECT * FROM `t-content` WHERE `is_page`='1' ORDER BY `id` DESC");
                             
                             for ($i = 0; $get = $query->fetch_array(); $i++)
                             {
