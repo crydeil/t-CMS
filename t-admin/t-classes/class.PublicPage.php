@@ -155,14 +155,17 @@ class PublicPage
                 
             }
             
+            $avatar = new Users;
+            
             $query = $db->query("SELECT * FROM `t-comments` WHERE `comment_content_url`='{$_GET['url']}' ORDER BY `comment_date` ASC LIMIT 10");     
             
             for ($i = 0; $get = $query->fetch_array(); $i++)
             {
 
-                echo '<blockquote>
+                echo '<blockquote class="clearfix">
+                        <img class="img-polaroid pull-left" style="margin: 5px 10px 5px 0;" src="' . $avatar->getGravatar($get['comment_author_email']) . '" alt="' . $get['comment_author'] . '" />
                         ' . $get['comment_body'] . '
-                        <small>' . $get['comment_author'] . ' (' . $get['comment_date'] . ')</small>
+                        <small class="text-info">' . $get['comment_author'] . ' (' . $get['comment_date'] . ')</small>
                     </blockquote>
                     <hr />';
 
