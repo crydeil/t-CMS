@@ -14,7 +14,7 @@ class Users
             die('Connect Error (' . $db->connect_errno . ') ' . $db->connect_error);
         }
                         
-            $gravatar = 'http://www.gravatar.com/avatar/' . md5(strtolower(trim($email))) . '?d=' . urlencode(BASE_URL . '/theme/img/t-cms-user-default.png') . '&s=30';
+            $gravatar = 'http://www.gravatar.com/avatar/' . md5(strtolower(trim($email))) . '?d=' . urlencode(substr(BASE_URL, 7) . '/theme/img/t-cms-user-default.png') . '&s=30';
             return $gravatar;
             
     }

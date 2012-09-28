@@ -21,7 +21,7 @@ class AdminPage
 
             $query = $db->query("SELECT * FROM `t-content` WHERE `is_page`='no' ORDER BY `id` DESC LIMIT 10");
 
-            echo '<legend><i class="icon-comments-alt"></i> Последние 10 записей в блоге</legend>
+            echo '<legend><i class="icon-comments-alt"></i> Последние записи в блоге</legend>
                 <table class="table table-striped">
                     <thead>
                         <tr>
@@ -59,7 +59,59 @@ class AdminPage
 
             echo '  </tbody>
                   </table>';
+            
+            $query = $db->query("SELECT * FROM `t-comments` WHERE 1 ORDER BY `comment_date` DESC LIMIT 10");
 
+            echo '<legend><i class="icon-comment"></i> Последние комментарии к записям</legend>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Дата</th><th>Комментарий к записи</th><th>Автор</th><th>E-mail автора</th><th></th>
+                        </tr>
+                    </thead>
+                    <tbody>';
+            
+            for ($i = 0; $get = $query->fetch_array(); $i++)
+            {
+
+                echo '  <tr>
+                            <td><small>' . date('d.m.Y, H:i', strtotime($get['comment_date'])) . '</small></td>
+                            <td><small><a href="' . BASE_URL . '/blog/' . $get['comment_content_url'] . '" target="_blank">' . BASE_URL . '/blog/' . $get['comment_content_url'] . '</a></small></td>  
+                            <td><small>' . $get['comment_author'] . '</small></td>
+                            <td><small>' . $get['comment_author_email'] . '</small></td>                          
+                            <td>
+                                <a href="#myModal-' . $get['id'] . '" role="button" class="btn btn-mini btn-danger" data-toggle="modal" title="Удалить"><i class="icon-remove icon-white"></i></a>
+                                <div style="display: none;" class="modal" id="myModal-' . $get['id'] . '" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-header">
+                                        <h3 id="myModalLabel">Удаление комментария</h3>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Вы уверены, что хотите удалить комментарий от ' . $get['comment_author'] . '?</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <form action="" method="post">
+                                            <button class="btn" data-dismiss="modal" aria-hidden="true">Отмена</button>
+                                            <input type="submit" name="delete_comment" class="btn btn-danger" value="Удалить" />
+                                        </form>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>';
+                
+                if (!empty($_POST['delete_comment']) || isset($_POST['delete_comment']))
+                {	
+
+                    $query = $db->query("DELETE FROM `t-comments` WHERE `id`='{$get['id']}' LIMIT 1");
+
+                    header('Location: ' . BASE_URL . '/t-admin/index');
+
+                }
+
+            }
+
+            echo '  </tbody>
+                  </table>';
+            
     }
     
 }
