@@ -135,7 +135,7 @@ class Html
                                                 
                         <script src="http://code.jquery.com/jquery-latest.min.js"></script>
                         <script src="' . THEME . '/js/bootstrap.min.js"></script>
-                            <script src="' . THEME . '/js/redactor/redactor.min.js"></script>
+                        <script src="' . THEME . '/js/redactor/redactor.min.js"></script>
                         <script src="' . THEME . '/js/redactor/lang/redactor.ru.js"></script>
                                                                         
                         <script src="' . THEME . '/js/jquery.sticky.min.js"></script>
