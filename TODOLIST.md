@@ -23,8 +23,10 @@
 * `+` Adding, editing, deleting menu items created from the pages.
 * `+` Editing information on the home page.
 * `+` Adding and deleting comments to posts in the blog.
+* `-` Editing comments to posts in the blog.
 * `+` Adding Gravatar user when commenting on a blog, if the e-mail associated with this service.
 * `+` Checking input fields when adding comments.
+* `-` Editing Data Administrator (e-mail, password, login).
 
 ## Русский
 
@@ -40,5 +42,7 @@
 * `+` Добавление, редактирование, удаление пунктов меню создаваемых из страниц.
 * `+` Редактирование информации на главной странице сайта.
 * `+` Добавление и удаление комментариев к записям в блоге.
+* `-` Редактирование комментариев к записям в блоге.
 * `+` Добавление Gravatar пользователя при комментировании записей в блоге, если он указал e-mail ассоциированный с этим сервисом.
 * `+` Проверка полей ввода информации при добавлении комментариев.
+* `-` Редактирование данных администратора (e-mail, password, login).
