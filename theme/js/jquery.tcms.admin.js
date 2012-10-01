@@ -34,6 +34,15 @@ $(document).ready(function()
         destination: "url"
     });
     
+    $('input#url').keypress(function(filterChar) {
+        
+        var keyChar = /[0-9a-zA-Z\-\x25\x27\x24\x23]/;
+        var a = filterChar.which;
+        var b = String.fromCharCode(a);
+        return !!(a==0||a==8||a==9||a==13||b.match(keyChar));
+            
+    });
+
     $("#t-admin-menu").sticky({ 
         topSpacing: 10  
     });
@@ -46,4 +55,4 @@ $(document).ready(function()
         $(this).attr('src','/theme/img/t-cms-logo.png')
     })
         
-})
+});

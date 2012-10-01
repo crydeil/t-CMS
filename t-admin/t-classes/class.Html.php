@@ -68,13 +68,13 @@ class Html
                     <link href="' . THEME . '/css/font-awesome.min.css" rel="stylesheet" />
                     <link href="' . THEME . '/js/redactor/redactor.min.css" rel="stylesheet" />
 
-                    <script src="http://code.jquery.com/jquery-latest.min.js"></script>        
+                    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>        
                     <script src="' . THEME . '/js/bootstrap.min.js"></script>
 
                     <script src="' . THEME . '/js/redactor/redactor.min.js"></script>
                     <script src="' . THEME . '/js/redactor/lang/redactor.ru.js"></script>
                     <script src="' . THEME . '/js/jquery.synctranslit.min.js"></script>
-
+                                        
                     <script src="' . THEME . '/js/jquery.sticky.min.js"></script>
                     <script src="' . THEME . '/js/jquery.tcms.admin.min.js"></script>
                     
@@ -133,11 +133,11 @@ class Html
                         <link href="' . THEME . '/css/font-awesome.min.css" rel="stylesheet" />
                         <link href="' . THEME . '/js/redactor/redactor.min.css" rel="stylesheet" />
                                                 
-                        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+                        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
                         <script src="' . THEME . '/js/bootstrap.min.js"></script>
                         <script src="' . THEME . '/js/redactor/redactor.min.js"></script>
                         <script src="' . THEME . '/js/redactor/lang/redactor.ru.js"></script>
-                                                                        
+                                                                                                
                         <script src="' . THEME . '/js/jquery.sticky.min.js"></script>
                         <script src="' . THEME . '/js/jquery.tcms.public.js"></script>
                         
