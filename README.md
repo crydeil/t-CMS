@@ -24,6 +24,9 @@ website/blog is very desirable. The visual part (admin panel and theme by defaul
 * Starting with version `0.1 beta8`: enable add comments in blog post with custom CAPTCHA & Gravatar.
 * Starting with version `0.2 beta1`: enable verify comment and SEO URLs inputs.
 
+### TODO LIST
+* A list of all our ideas for the future - read [here](https://github.com/VikkyShostak/filterField/blob/master/TODOLIST.md).
+
 ### System requirements (server)
 * Apache `2.3.x` (enabled `rewrite_module`)
 * PHP `5.4.x` (not less than `32 MB` of available memory, enabled `php_curl`)
