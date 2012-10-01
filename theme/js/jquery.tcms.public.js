@@ -22,7 +22,7 @@ $(document).ready(function()
     
     $('input[name="comment_author_email"]').keypress(function(filterChar) {
         
-        var keyChar = /[0-9a-zA-Z\@\.\-\x25\x27\x24\x23]/;
+        var keyChar = /[0-9a-zA-Z\@\.\_\-\x25\x27\x24\x23]/;
         var a = filterChar.which;
         var b = String.fromCharCode(a);
         return !!(a==0||a==8||a==9||a==13||b.match(keyChar));
