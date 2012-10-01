@@ -2,7 +2,7 @@
 
 /**
  * @author Vikky Shostak <vikkyshostak@gmail.com>
- * @version 0.1
+ * @version 0.2
  */
 
 class Menu
