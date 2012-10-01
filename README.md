@@ -25,7 +25,7 @@ website/blog is very desirable. The visual part (admin panel and theme by defaul
 * Starting with version `0.2 beta1`: enable verify comment and SEO URLs inputs.
 
 ### TODO LIST
-* A list of all our ideas for the future - read [here](https://github.com/VikkyShostak/filterField/blob/master/TODOLIST.md).
+* A list of all our ideas for the future - read [here](https://github.com/VikkyShostak/t-CMS/blob/master/TODOLIST.md).
 
 ### System requirements (server)
 * Apache `2.3.x` (enabled `rewrite_module`)
@@ -76,6 +76,9 @@ front-end фреймворка `Twitter Bootstrap v2.1.1` и `Font Awesome v2.0`
 * Начиная с версии `0.1 beta7`: включена автоматическая RSS лента последних десяти записей из блога.
 * Начиная с версии `0.1 beta8`: включена возможность добавления комментариев к записям в блоге с текстовой CAPTCHA и Gravatar.
 * Начиная с версии `0.2 beta1`: включена проверка вводимых символов в текстовые поля для комментариев и ЧПУ ссылок.
+
+### TODO список
+* Список всех наших идей на будущее - читайте [тут](https://github.com/VikkyShostak/t-CMS/blob/master/TODOLIST.md).
 
 ### Системные требования (сервер)
 * Apache `2.3.x` (с включённым `rewrite_module`)
