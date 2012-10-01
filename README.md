@@ -78,7 +78,7 @@ front-end фреймворка `Twitter Bootstrap v2.1.1` и `Font Awesome v2.0`
 * Начиная с версии `0.2 beta1`: включена проверка вводимых символов в текстовые поля для комментариев и ЧПУ ссылок.
 
 ### TODO список
-* Список всех наших идей на будущее - читайте [тут](https://github.com/VikkyShostak/t-CMS/blob/master/TODOLIST.md#русский).
+* Список всех наших идей на будущее - читайте [тут](https://github.com/VikkyShostak/t-CMS/blob/master/TODOLIST.md#%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9).
 
 ### Системные требования (сервер)
 * Apache `2.3.x` (с включённым `rewrite_module`)
