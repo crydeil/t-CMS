@@ -74,6 +74,13 @@ class Breadcrumbs
                 <li>Редактирование главной страницы сайта</li>';
             
         }
+        elseif ($_GET['options'] === 'edit' && $_GET['param'] === 'user')
+        {
+            
+            echo '<li><a href="' . BASE_URL . '/t-admin/index">Рабочий стол</a> <span class="divider">/</span></li>                
+                <li>Редактирование учётной записи администратора</li>';
+            
+        }
         elseif ($_GET['options'] === 'list' && $_GET['param'] === 'post')
         {
             
