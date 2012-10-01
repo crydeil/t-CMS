@@ -526,6 +526,77 @@ class AdminEdit
                         }
 
                     }
+                                
+            }
+            
+            elseif ($_GET['options'] === 'edit' && $_GET['param'] === 'user')
+            {
+
+                $query = $db->query("SELECT * FROM `t-users` WHERE `id`='{$_GET['id']}' LIMIT 1");
+                $get = $query->fetch_array();
+
+                    if (empty($_POST['update_user']) || !isset($_POST['update_user']))
+                    {
+                        echo '<form class="form-inline" action="" method="post">
+                  
+                                <legend>Смена пароля</legend>
+                                <p class="well well-small"><input class="input-xxlarge" type="password" name="password" value="" /></p>
+                                <legend>Смена e-mail</legend>                                    
+                                <p class="well well-small"><input class="input-xxlarge" type="email" name="email" value="' . $get['email'] . '" /></p>
+                                
+                            <hr />
+
+                                <input type="submit" class="btn btn-success" name="update_user" value="Обновить данные администратора" />                            
+                            
+                            </form>';
+
+                    }
+                    else
+                    {  	
+
+                        $password = isset($_POST['password']) ? $db->real_escape_string($_POST['password']) : '';                        
+                        $email = isset($_POST['email']) ? $db->real_escape_string($_POST['email']) : '';                        
+                        
+                        $error = false;
+                        $errort = '';
+
+                        if (strlen($password) < 6)
+                        {
+                                $error = true;
+                                $errort .= '- Длина пароля должна быть не менее 6-ти символов.<br />';
+                        }
+                        
+                        if (!$error)
+                        {
+                            
+                            $hashed_password = md5(md5($password) . $get['salt']);
+                            $query = $db->query("UPDATE `t-users` SET 
+                                                                    `password`='{$hashed_password}', 
+                                                                    `email`='{$email}'
+
+                                                                    WHERE `id`='{$_GET['id']}'", MYSQLI_USE_RESULT);
+
+                            echo '<div class="alert alert-block alert-success">  
+                                    <h4>Данные администратора успешно обновлены!</h4>
+                                    <p>Вы можете перейти <a href="' . BASE_URL . '" target="_blank">на главную страницу</a> сайта или продолжить <a href="' . BASE_URL . '/t-admin/index">администрирование</a>.
+                                </div>';
+
+                        }
+                        else
+                        {
+
+                            echo '<div class="alert alert-block alert-error">  
+                                    <h4>Данные администратора не были обновлены!</h4>
+                                    <p></p>
+                                    <p>Произошли следующие ошибки:<br />
+                                    ' . $errort. '</p>
+                                    <p><a href="javascript:history.go(-1)">Вернуться назад</a></p>                                
+                                </div>';
+
+                        }
+
+                    }
+                    
             }
 
     }

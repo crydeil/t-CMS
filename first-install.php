@@ -55,6 +55,11 @@ if (empty($_POST))
             </div>
             <p>&nbsp;</p>
             <div class="input-prepend">
+                <span class="add-on"><i class="icon-envelope-alt"></i></span>
+                <input type="email" class="input-xlarge" placeholder="E-mail администратора" name="email" />
+            </div>
+            <p>&nbsp;</p>
+            <div class="input-prepend">
                 <span class="add-on"><i class="icon-globe"></i></span>
                 <input type="text" class="input-xlarge" placeholder="Название сайта" name="title" />
             </div>
@@ -69,6 +74,7 @@ else
     $login = (isset($_POST['login'])) ? $db->real_escape_string($_POST['login']) : '';
     $password = (isset($_POST['password'])) ? $db->real_escape_string($_POST['password']) : '';
     $password_confirm = (isset($_POST['password_confirm'])) ? $db->real_escape_string($_POST['password_confirm']) : '';
+    $email = (isset($_POST['email'])) ? $db->real_escape_string($_POST['email']) : '';
     $title = (isset($_POST['title'])) ? $db->real_escape_string($_POST['title']) : '';
 
     $error = false;
@@ -112,6 +118,7 @@ else
         $query1 = $db->query("INSERT INTO `t-users` SET
                                                     `login`='{$login}',
                                                     `password`='{$hashed_password}',
+                                                    `email`='{$email}',
                                                     `salt`='{$salt}'");
                         
         $query2 = $db->query("INSERT INTO `t-settings` SET 
@@ -135,13 +142,13 @@ echo '</div>
 
         <div class="span7">
             <h3>Инструкции</h3>
-            <p>Для успешной инсталляции <strong>t-CMS</strong> - заполни файл <em>./ t-admin / config.php</em> (в корне) 
+            <p>Для успешной инсталляции <strong>t-CMS</strong> - заполни файл <code>./t-admin/config.php</code> (в корне) 
             в соответствии с твоим хостингом.</p>
             <p>Если ты уже установил <strong>t-CMS</strong>, то:</p> 
             <p>
             <ol>
-                <li>удали файл <em>./ first-install.php</em>;</li>
-                <li>поставь права CHMOD 777 на папку <em>./ uploads</em> (в корне);</li>
+                <li>удали файл <code>./first-install.php</code>;</li>
+                <li>поставь права <code>CHMOD 777</code> на папку <code>./uploads</code> (в корне);</li>
                 <li>войди в <a href="' . BASE_URL . '/auth/login">панель управления</a> и управляй своим сайтом.</li>
             </ol>
             </p>

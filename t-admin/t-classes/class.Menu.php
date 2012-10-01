@@ -31,6 +31,7 @@ class Menu
                     <li><a href="' . BASE_URL . '/t-admin/index/list/menu"><i class="icon-link"></i> Пункты меню</a></li>                    
                     <li><hr /></li>
                     <li><a href="' . BASE_URL . '/t-admin/index/edit/settings"><i class="icon-cogs"></i> Настройка главной страницы</a></li>
+                    <li><a href="' . BASE_URL . '/t-admin/index/edit/user/1"><i class="icon-user"></i> Учётная запись администратора</a></li>
                 </ul>';
 
     }

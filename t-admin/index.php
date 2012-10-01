@@ -55,6 +55,11 @@ if (isset($_SESSION['user_id']))
             $admin = new AdminEdit;
             include_once $_SERVER['DOCUMENT_ROOT'].'/theme/admin/edit.tpl';
         }
+        elseif ($_GET['options'] === 'edit' && $_GET['param'] === 'user')
+        {
+            $admin = new AdminEdit;
+            include_once $_SERVER['DOCUMENT_ROOT'].'/theme/admin/edit.tpl';
+        }
         elseif ($_GET['options'] === 'list' && $_GET['param'] === 'post')
         {
             $admin = new AdminList;

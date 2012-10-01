@@ -26,7 +26,7 @@
 * `-` Editing comments to posts in the blog.
 * `+` Adding Gravatar user when commenting on a blog, if the e-mail associated with this service.
 * `+` Checking input fields when adding comments.
-* `-` Editing Data Administrator (e-mail, password, login).
+* `+` Editing Data Administrator (e-mail, password).
 
 ## Русский
 
@@ -45,4 +45,4 @@
 * `-` Редактирование комментариев к записям в блоге.
 * `+` Добавление Gravatar пользователя при комментировании записей в блоге, если он указал e-mail ассоциированный с этим сервисом.
 * `+` Проверка полей ввода информации при добавлении комментариев.
-* `-` Редактирование данных администратора (e-mail, password, login).
+* `+` Редактирование данных администратора (e-mail, password).

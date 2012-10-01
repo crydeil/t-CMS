@@ -47,6 +47,7 @@ CREATE TABLE IF NOT EXISTS `t-users` (
   `id` smallint(11) unsigned NOT NULL AUTO_INCREMENT,
   `login` varchar(50) NOT NULL DEFAULT '',
   `password` varchar(32) NOT NULL DEFAULT '',
+  `email` varchar(512) NOT NULL,
   `salt` char(3) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `login` (`login`)

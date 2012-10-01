@@ -23,5 +23,5 @@ class Users
             return $gravatar;
             
     }
-    
+        
 }
