@@ -16,7 +16,7 @@ website/blog is very desirable. The visual part (admin panel and theme by defaul
 `Twitter Bootstrap v2.1.1` and `Font Awesome v2.0`.
 
 ### Also include:
-* jQuery Core `latest version`
+* jQuery Core `v1.7`
 * Redactor.JS WYSIWYG `v8.0.3`
 
 ### Global change:
@@ -66,7 +66,7 @@ site name (which will be the `title` and `h1` tags for the home page).
 front-end фреймворка `Twitter Bootstrap v2.1.1` и `Font Awesome v2.0`.
 
 ### Также включены:
-* jQuery Core `последняя версия`
+* jQuery Core `v1.7`
 * Redactor.JS WYSIWYG `v8.0.3`
 
 ### Глобальные изменения:
