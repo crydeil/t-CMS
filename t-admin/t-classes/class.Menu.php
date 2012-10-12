@@ -77,7 +77,7 @@ class Menu
             for ($i = 0; $get = $query->fetch_array(); $i++)
             {
 
-                echo '<li><a href="' . BASE_URL . '/' . $get['menu_url'] . '">' . $get['menu_title'] . '</a></li>';
+                echo '<li><a href="' . BASE_URL . '/' . $get['menu_url'] . '"><i class="icon-chevron-right"></i> ' . $get['menu_title'] . '</a></li>';
 
             }
             
